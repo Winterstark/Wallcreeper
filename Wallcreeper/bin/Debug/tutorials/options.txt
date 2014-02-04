@@ -1,0 +1,14 @@
+SKIP
+"This tab controls the various options in Wallcreeper."-[tabs]
+"Select a directory where Wallcreeper will send currently active wallpapers."->(textMainWallDir)*You do not need to assign a directory here if you are on Windows XP, or if you uncheck the option to use Windows Vista/7 wallpaper manager.
+"IMPORTANT: this folder is a temp. folder where Wallcreeper stores current wallpapers. DO NOT SET YOUR EXISTING WALLPAPER COLLECTION AS THIS FOLDER, as it might get deleted!"->(textMainWallDir)
+"You should check this option to enable Wallcreeper to be running at all times."->(checkRunAtStartup)
+"When this option is checked Wallcreeper will use windows built-in themes to change the wallpaper. Uncheck to make Wallcreeper set the wallpaper directly to the desktop."->(checkWinManager)*Not available on Windows XP because XP doesn't have a built-in wallpaper manager.
+"This value controls how often the wallpaper changes."->(comboRefresh)
+"Set the period between two online weather checks here."->(numWCheck)
+"You do not need to enter your geographical location here, but you can use it to determine your latitude and longitude."->(textLocation)*Your geographical coordinates are important because they determine the times for local sunrise and sunset.
+"Enter your latitude here."->(textLatitude)*If Wallcreeper fails to determine your coordinates based on your location, you should use an online service (such as Wolfram|Alpha) to get them.
+"Enter your longitude here."->(textLongitude)*If Wallcreeper fails to determine your coordinates based on your location, you should use an online service (such as Wolfram|Alpha) to get them.
+"Enter your time zone here."->(textTimezone)*This value is constant, regardles of local daylight savings time. Wallcreeper handles DST calculations separately.
+"Choose your level of update notifications here."->(trackUpdate)
+"Check this option to view a list of changes after each update is installed."->(checkShowChangelog)

@@ -1,0 +1,5 @@
+SKIP
+"You can use this feature to create a wallpaper pack, which is an archived file containing multiple wallpaper themes, useful for sharing your themes easily."-this
+"Select one or more themes in this list."->[chklistThemes]
+"Wallcreeper needs a file archiver (7-Zip or WinRAR) to zip the selected themes into a single file. If the program couldn't locate one you should locate its .exe file yourself."->(textArchiver)*You can export a pack without using an archiver, but the end result will be a folder, which isn't as practical as a single file for uploading or sending in an email.
+"Click this button to export the selected themes."->(buttExport)

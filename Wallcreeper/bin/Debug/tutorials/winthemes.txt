@@ -1,0 +1,9 @@
+SKIP
+"This tab works with Windows themes, which control various visual aspects of your Windows system. You can edit them directly by right-clicking on the Desktop and selecting Personalize (if you're on Win7), or you can set a system of rules here to rotate a collection of varios windows themes."-[tabs]
+"Select a windows theme here."->(comboWinTheme)
+"Choose a visual style from this list."->(comboWinThemeStyle)
+"Choose a predefined color from this list or enter one yourself, in the form of RED-GREEN-BLUE (eg. 0-100-255)."->(comboWinThemeColor)
+"You can also use a standard color dialog to pick a color."->(buttColorPicker)
+"Select a sound pack from this list."->(comboWinThemeSounds)
+"Choose a screen saver here."->(comboWinThemeSSaver)
+"As with wallpaper themes, use this list to select the dates when your windows theme should be active. The same date entry rules apply."->(comboWinThemeDate)

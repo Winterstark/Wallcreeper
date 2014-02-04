@@ -1,0 +1,16 @@
+SKIP
+"All of the program's settings can be changed from this area, which is divided into three tabs. In this one you can create, edit, or delete wallpaper themes."-[tabs]*A wallpaper theme is a collection of wallpapers that share a common characteristic, such as being only active during the day, or in Spring, etc.
+"This label displays various information about the currently active themes, time and date, sunrise and sunset, etc."->[lblStatus]
+"This icon displays the current local weather conditions or, if it's night-time and not raining, the current lunar phase."->(picWIcon)
+"Because the weather service is not perfect, sometimes this icon will not reflect your local weather accurately. You can click on the icon to change the weather conditions, which will cause a change in the currently active themes."->(picWIcon)
+"The weather icon will remain fixed until the online service changes its weather state into the one you've selected. After that the icon will change with the online weather conditions."->(picWIcon)*You can also reset the icon by double-clicking it.
+"Use this control to select an existing theme."->(comboTheme)
+"This is the path to the directory that contains wallpapers associated with the theme."->(textWallDir)
+"This option controls on which dates the theme is active. Choose one of the predefined options, enter a specific date (e.g. 31.10.), or enter a date range (e.g. 20.2. - 5. 3.)."->(comboDate)*You can also enter multiple dates and date ranges, separated by commas.
+"Choose the time of day when the theme should be active here. Besides selecting one of the predefined options, you can enter a custom time or time range (e.g. 3:45 - 4:15, 16:00, 16, 20 - 21)."->(comboTime)*As with the date option, you can enter multiple time entries.
+"If you want your theme to be active only during some weather conditions, choose them here"->(comboWeather)
+"A theme with this option will, when active, be the only active theme."->(checkOverpower)*If more than one theme with this option is active at the same time they will all be active.
+"Click here to create a new theme"->(buttNewTheme)
+"This button creates an identical copy of the selected theme"->(buttCloneTheme)*If you don't see a button here, one will appear after you select a theme.
+"In order to facilitate the sharing of wallpapers and themes, you can use this button to export some of your themes into an archived file."->(buttExportPack)
+"If you've downloaded a theme pack, click here to load it into Wallcreeper."->(buttImportPack)*You can also load a pack by dragging it onto this window. You can drag the archive itself (*.wcp), or if the archive has already been extracted you can drag the pack folder or the pack info file (*.txt).

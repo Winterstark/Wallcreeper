@@ -1,0 +1,252 @@
+Spring
+C:\pix\walls\Spring
+Spring
+Any time
+Any weather
+False
+Spring - Day
+C:\pix\walls\Spring - Day
+Spring
+Day
+Any weather
+False
+Spring - Day - Clear
+C:\pix\walls\Spring - Day - Clear
+Spring
+Day
+Clear
+False
+Spring - Day - Cloudy
+C:\pix\walls\Spring - Day - Cloudy
+Spring
+Day
+Cloudy
+False
+Spring - Day - Rain
+C:\pix\walls\Spring - Day - Rain
+Spring
+Day
+Rain
+True
+Spring - Night
+C:\pix\walls\Spring - Night
+Spring
+Night
+Any weather
+False
+Spring - Twilight - Clear
+C:\pix\walls\Spring - Twilight - Clear
+Spring
+Twilight
+Clear
+False
+Spring - Twilight - Cloudy
+C:\pix\walls\Spring - Twilight - Cloudy
+Spring
+Twilight
+Cloudy
+False
+Summer
+C:\pix\walls\Summer
+Summer
+Any time
+Any weather
+False
+Summer - Day
+C:\pix\walls\Summer - Day
+Summer
+Day
+Any weather
+False
+Summer - Day - Clear
+C:\pix\walls\Summer - Day - Clear
+Summer
+Day
+Clear
+False
+Summer - Day - Cloudy
+C:\pix\walls\Summer - Day - Cloudy
+Summer
+Day
+Cloudy
+False
+Summer - Day - Rain
+C:\pix\walls\Summer - Day - Rain
+Summer
+Day
+Rain
+True
+Summer - Night
+C:\pix\walls\Summer - Night
+Summer
+Night
+Any weather
+False
+Summer - Twilight - Clear
+C:\pix\walls\Summer - Twilight - Clear
+Summer
+Twilight
+Clear
+False
+Summer - Twilight - Cloudy
+C:\pix\walls\Summer - Twilight - Cloudy
+Summer
+Twilight
+Cloudy
+False
+Autumn
+C:\pix\walls\Autumn
+Autumn
+Any time
+Any weather
+False
+Autumn - Day
+C:\pix\walls\Autumn - Day
+Autumn
+Day
+Any weather
+False
+Autumn - Day - Clear
+C:\pix\walls\Autumn - Day - Clear
+Autumn
+Day
+Clear
+False
+Autumn - Day - Cloudy
+C:\pix\walls\Autumn - Day - Cloudy
+Autumn
+Day
+Cloudy
+False
+Autumn - Day - Rain
+C:\pix\walls\Autumn - Day - Rain
+Autumn
+Day
+Rain
+True
+Autumn - Night
+C:\pix\walls\Autumn - Night
+Autumn
+Night
+Any weather
+False
+Autumn - Twilight - Clear
+C:\pix\walls\Autumn - Twilight - Clear
+Autumn
+Twilight
+Clear
+False
+Autumn - Twilight - Cloudy
+C:\pix\walls\Autumn - Twilight - Cloudy
+Autumn
+Twilight
+Cloudy
+False
+Winter
+C:\pix\walls\Winter
+Winter
+Any time
+Any weather
+False
+Winter - Day
+C:\pix\walls\Winter - Day
+Winter
+Day
+Any weather
+False
+Winter - Day - Clear
+C:\pix\walls\Winter - Day - Clear
+Winter
+Day
+Clear
+False
+Winter - Day - Cloudy
+C:\pix\walls\Winter - Day - Cloudy
+Winter
+Day
+Cloudy
+False
+Winter - Day - Rain
+C:\pix\walls\Winter - Day - Rain
+Winter
+Day
+Rain
+True
+Winter - Night
+C:\pix\walls\Winter - Night
+Winter
+Night
+Any weather
+False
+Day - Snow
+C:\pix\walls\Day - Snow
+Any date
+Day
+Snow
+True
+Night - Snow
+C:\pix\walls\Night - Snow
+Any date
+Night
+Snow
+True
+Night - Rain
+C:\pix\walls\Night - Rain
+Any date
+Night
+Rain
+True
+Winter - Twilight - Clear
+C:\pix\walls\Winter - Twilight - Clear
+Winter
+Twilight
+Clear
+False
+Winter - Twilight - Cloudy
+C:\pix\walls\Winter - Twilight - Cloudy
+Winter
+Twilight
+Cloudy
+False
+Holidays - Halloween
+C:\pix\walls\Holidays - Halloween
+Halloween
+Any time
+Any weather
+False
+Holidays - Winter
+C:\pix\walls\Holidays - Winter
+6.12.-31.12., 1.1.-6.1.
+Any time
+Any weather
+False
+Holidays - Winter - Christmas
+C:\pix\walls\Holidays - Winter - Christmas
+24.12. - 26.12.
+Any time
+Any weather
+False
+Holidays - Winter - New Year
+C:\pix\walls\Holidays - Winter - New Year
+31.12., 1.1.
+Any time
+Any weather
+True
+Holidays - Easter
+C:\pix\walls\Holidays - Easter
+Easter-1
+Any time
+Any weather
+False
+Full Moon
+C:\pix\walls\Full Moon
+Full moon
+Night
+Any weather
+False
+Coffee Break
+C:\pix\walls\Coffee Break
+Any date
+12:30-13:30
+Any weather
+True

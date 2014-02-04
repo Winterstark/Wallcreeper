@@ -1,0 +1,4 @@
+sunny/clear/few clouds
+cloudy/partly cloudy/mist/dust/fog/smoke/haze/overcast
+rain/storm/thunderstorm
+snow/sleet/icy/flurries
