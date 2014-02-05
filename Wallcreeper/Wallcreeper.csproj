@@ -40,8 +40,9 @@
     <Reference Include="FlickrNet">
       <HintPath>FlickrNet-3.4.0\FlickrNet.dll</HintPath>
     </Reference>
-    <Reference Include="GenericForms">
-      <HintPath>..\..\GenericForms\GenericForms\bin\Release\GenericForms.dll</HintPath>
+    <Reference Include="GenericForms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>GenericForms\GenericForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.WindowsAPICodePack.Shell">
       <HintPath>WindowsAPICodePack\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>

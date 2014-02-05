@@ -18,6 +18,8 @@ namespace Wallcreeper
 {
     public partial class formMain : Form
     {
+        const double VERSION = 1.0;
+        
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         private static extern Int32 SystemParametersInfo(UInt32 action, UInt32 uParam, String vParam, UInt32 winIni);
 
@@ -44,7 +46,6 @@ namespace Wallcreeper
         enum WallpaperSource { Local, Dropbox, Flickr };
 
         const double MOON_PERIOD = 29.530588853;
-        //readonly DateTime REFERENCE_FULL_MOON = new DateTime(2012, 1, 9, 8, 33, 0);
 
         formAddWall addWall;
         BackgroundWorker worker;
@@ -1976,7 +1977,7 @@ namespace Wallcreeper
             for (int i = 0; i < currUpdateNotifs; i++)
                 askPermissions[i] = false;
 
-            Updater.Update(0.97, "https://docs.google.com/document/pub?id=12XxGDFe_dEF8XawWLhQPIeMwOKBf-uI6C1dnW8MO9vA", askPermissions, currShowChangelog);
+            Updater.Update(VERSION, "https://raw2.github.com/Winterstark/Wallcreeper/master/update/update.txt", askPermissions, currShowChangelog);
 
             //first run
             if (firstRun)
