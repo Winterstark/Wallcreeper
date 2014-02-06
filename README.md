@@ -2,15 +2,15 @@ Wallcreeper
 ===========
 
 Wallcreeper is a wallpaper manager for Windows with a unique feature: it selects the wallpaper that best fits the current conditions, such as:
-* current time (is it day, night, or sunrise/sunset?)
-* current season
-* local weather (clear, clouds, rain, snow)
+* Current time (is it day, night, or sunrise/sunset?)
+* Current season
+* Local weather (clear, clouds, rain, snow)
 
 Using such conditions means you will never get a bright and sunny wallpaper in the middle of the night, a snow-covered landscape during summer, etc.
 
 The program takes the wallpapers from pre-organized themes, which you either have to create yourself or download in the form of wallpaper packs.
 
-However, in the latest version Wallcreeper enables you to use online sources such as Flickr or my cloud-based collection of already organized themes. *What this means is that after you download Wallcreeper (??? MBytes) you instantly gain access to 2000+ wallpapers that will always fit the moment.*
+However, in the latest version Wallcreeper enables you to use online sources such as Flickr or my cloud-based collection of already organized themes. *What this means is that after you download Wallcreeper (total size: ~800 Kb) you instantly gain access to 2000+ wallpapers that will always fit the moment.*
 
 
 Installation
@@ -32,6 +32,18 @@ After you start Wallcreeper it won't appear on the screen, but you can find its 
 A wallpaper theme is a collection of wallpapers that is only active during a specific set of conditions, namely: current time, season, and weather conditions. This allows you to always have a wallpaper matching the current conditions.
 
 ![Screenshot: wallpaper themes](http://i.imgur.com/HAFDROe.png)
+
+To set the active time of a wallpaper theme, use:
+* Predefined ranges (day, night, twilight)
+* 24 hrs format, e.g. 16 or 16:00
+* Custom ranges: 7 - 11
+* Any of the above formats, separated by commas: 12, 16 - 16:45, 20 - 21
+
+To set the active date of a wallpaper theme, use:
+* Predefined options (4 seasons, Full moon, etc.)
+* Custom date in the day-month format: 31.10.
+* Custom ranges: 20.2. - 5.3.
+* Any of the above formats, separated by commas: 5.5., 10.5. - 21.5., 31.5.
 
 The Wallcreeper release version comes bundled with a set of themes that adapts to the time of day (day, night, or sunset/sunrise), four seasons, local weather (clear, clouds, rain, or snow), as well as special events (e.g. full moon, winter holidays), which amounts to a total of 42 themes.
 
@@ -62,25 +74,30 @@ If you want to download the official wallpaper packs (in 1600x900 resolution) go
 ![Screenshot: options](http://i.imgur.com/y229iHR.png)
 
 In the Options tab you can change the following:
-* how often the wallpaper changes
-* how often Wallcreeper needs to check the weather
-* your latitute, longitude, and time zone (used in determining sunrise/sunset times)
-* whether Wallcreeper runs when Windows starts
-* checking for updates automatically
-* using Windows Vista/7 wallpaper manager
+* How often the wallpaper changes
+* How often Wallcreeper needs to check the weather
+* Your latitute, longitude, and time zone (used in determining sunrise/sunset times)
+* Whether Wallcreeper runs when Windows starts
+* Checking for updates automatically
+* Using Windows Vista/7 wallpaper manager
 
 This final option is *very important*: if it is disabled then Wallcreeper sets the current wallpaper itself. Turning it on will make Wallcreeper apply wallpapers by using the Windows built-in manager, which brings several useful features:
-* wallpaper changes come with the nice Windows fade animation
-* the desktop right-click context menu contains the option Next desktop background
+* Wallpaper changes come with the nice Windows fade animation
+* The desktop right-click context menu contains the option Next desktop background
 
 However, there are a couple of hitches with using this method. The first time you use it the Windows Personalization window will appear and you will (probably) have to close it manually. Also, sometimes the Windows wallpaper manager goes on the fritz and stops updating, in which case you will have to restart Windows Explorer.
+
+### Changing weather status
+
+Because the weather service is not perfect, sometimes Wallcreeper will activate the wrong themes. To fix this issue click on the weather icon in the lower-right corner of the main window. Keep clicking until you activate the correct weather status. Double-click the icon to reset.
 
 ### Tray menu
 
 Besides double-clicking the tray icon to bring up the main window, right-clicking it also has some useful options:
-* Change wallpaper (only works when you're not using Windows Vista/7 wallpaper manager)
-* Locate current wallpaper - display the current wallpaper on the disk (only works if the current wallpaper is a local file)
-* Open wallpaper webpage (conversely, this option only works if the current wallpaper if from an online source)
+* Change wallpaper (only works when you're not using Windows Vista/7 wallpaper manager).
+* Locate current wallpaper - display the current wallpaper on the disk (only works if the current wallpaper is a local file).
+* Open wallpaper webpage (conversely, this option only works if the current wallpaper is from an online source).
+* Save wallpaper to local theme (also works only with online sources) - saves the wallpaper to your local directory.
 
 
 Credits
