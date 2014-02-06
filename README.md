@@ -10,7 +10,7 @@ Using such conditions means you will never get a bright and sunny wallpaper in t
 
 The program takes the wallpapers from pre-organized themes, which you either have to create yourself or download in the form of wallpaper packs.
 
-However, in the latest version Wallcreeper enables you to use online sources such as Flickr or my cloud-based collection of already organized themes. *What this means is that after you download Wallcreeper (total size: ~800 Kb) you instantly gain access to 2000+ wallpapers that will always fit the moment.*
+However, in the latest version Wallcreeper enables you to use online sources such as Flickr or my cloud-based collection of already organized themes. *What this means is that after you download Wallcreeper (total size: ~800 Kb) you instantly gain access to 2000+ wallpapers that will always fit the moment.* You can also freely browse the online themes through [this file](https://github.com/Winterstark/Wallcreeper/blob/master/online%20themes.txt).
 
 
 Installation
