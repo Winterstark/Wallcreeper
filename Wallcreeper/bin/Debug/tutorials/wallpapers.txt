@@ -11,6 +11,5 @@ SKIP
 "If you want your theme to be active only during some weather conditions, choose them here"->(comboWeather)
 "A theme with this option will, when active, be the only active theme."->(checkOverpower)*If more than one theme with this option is active at the same time they will all be active.
 "Click here to create a new theme"->(buttNewTheme)
-"This button creates an identical copy of the selected theme"->(buttCloneTheme)*If you don't see a button here, one will appear after you select a theme.
 "In order to facilitate the sharing of wallpapers and themes, you can use this button to export some of your themes into an archived file."->(buttExportPack)
 "If you've downloaded a theme pack, click here to load it into Wallcreeper."->(buttImportPack)*You can also load a pack by dragging it onto this window. You can drag the archive itself (*.wcp), or if the archive has already been extracted you can drag the pack folder or the pack info file (*.txt).

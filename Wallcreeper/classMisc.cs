@@ -63,7 +63,7 @@ namespace Wallcreeper
 
         public string SaveTxt()
         {
-            return name + Environment.NewLine + wallDir + Environment.NewLine + date + Environment.NewLine + time + Environment.NewLine + weather + Environment.NewLine + overpower + Environment.NewLine;
+            return name + Environment.NewLine + wallDir.Replace(System.Windows.Forms.Application.StartupPath + "\\wall_themes\\", "") + Environment.NewLine + date + Environment.NewLine + time + Environment.NewLine + weather + Environment.NewLine + overpower + Environment.NewLine;
         }
     }
 

@@ -114,6 +114,16 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.tabAbout = new System.Windows.Forms.TabPage();
+            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lblVersion = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.picWIcon = new System.Windows.Forms.PictureBox();
             this.colorDiag = new System.Windows.Forms.ColorDialog();
@@ -128,6 +138,8 @@
             this.tabOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWCheck)).BeginInit();
+            this.tabAbout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,6 +166,7 @@
             this.tabs.Controls.Add(this.tabWallSources);
             this.tabs.Controls.Add(this.tabWinThemes);
             this.tabs.Controls.Add(this.tabOptions);
+            this.tabs.Controls.Add(this.tabAbout);
             this.tabs.Location = new System.Drawing.Point(12, 12);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
@@ -1054,20 +1067,151 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(276, 133);
+            this.label7.Location = new System.Drawing.Point(247, 133);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(28, 13);
+            this.label7.Size = new System.Drawing.Size(57, 13);
             this.label7.TabIndex = 44;
-            this.label7.Text = "Lon:";
+            this.label7.Text = "Longitude:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(120, 133);
+            this.label6.Location = new System.Drawing.Point(97, 133);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 13);
+            this.label6.Size = new System.Drawing.Size(48, 13);
             this.label6.TabIndex = 43;
-            this.label6.Text = "Lat:";
+            this.label6.Text = "Latitude:";
+            // 
+            // tabAbout
+            // 
+            this.tabAbout.Controls.Add(this.linkLabel8);
+            this.tabAbout.Controls.Add(this.picLogo);
+            this.tabAbout.Controls.Add(this.linkLabel5);
+            this.tabAbout.Controls.Add(this.linkLabel4);
+            this.tabAbout.Controls.Add(this.linkLabel3);
+            this.tabAbout.Controls.Add(this.linkLabel2);
+            this.tabAbout.Controls.Add(this.linkLabel1);
+            this.tabAbout.Controls.Add(this.lblVersion);
+            this.tabAbout.Controls.Add(this.label26);
+            this.tabAbout.Location = new System.Drawing.Point(4, 22);
+            this.tabAbout.Name = "tabAbout";
+            this.tabAbout.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAbout.Size = new System.Drawing.Size(523, 323);
+            this.tabAbout.TabIndex = 5;
+            this.tabAbout.Text = "About";
+            this.tabAbout.UseVisualStyleBackColor = true;
+            // 
+            // linkLabel8
+            // 
+            this.linkLabel8.Font = new System.Drawing.Font("Candara", 10F);
+            this.linkLabel8.LinkArea = new System.Windows.Forms.LinkArea(47, 21);
+            this.linkLabel8.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel8.Location = new System.Drawing.Point(224, 198);
+            this.linkLabel8.Name = "linkLabel8";
+            this.linkLabel8.Size = new System.Drawing.Size(187, 84);
+            this.linkLabel8.TabIndex = 26;
+            this.linkLabel8.TabStop = true;
+            this.linkLabel8.Text = "Send any comments, requests, or bug reports to winterstark@gmail.com\r\nThanks!";
+            this.linkLabel8.UseCompatibleTextRendering = true;
+            this.linkLabel8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel8_LinkClicked);
+            // 
+            // picLogo
+            // 
+            this.picLogo.Location = new System.Drawing.Point(6, 16);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(200, 180);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 25;
+            this.picLogo.TabStop = false;
+            // 
+            // linkLabel5
+            // 
+            this.linkLabel5.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel5.LinkArea = new System.Windows.Forms.LinkArea(33, 7);
+            this.linkLabel5.Location = new System.Drawing.Point(6, 236);
+            this.linkLabel5.Name = "linkLabel5";
+            this.linkLabel5.Size = new System.Drawing.Size(200, 32);
+            this.linkLabel5.TabIndex = 20;
+            this.linkLabel5.TabStop = true;
+            this.linkLabel5.Text = "Weather and moon phases icons by VClouds";
+            this.linkLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.linkLabel5.UseCompatibleTextRendering = true;
+            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel4.LinkArea = new System.Windows.Forms.LinkArea(5, 10);
+            this.linkLabel4.Location = new System.Drawing.Point(117, 268);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(89, 21);
+            this.linkLabel4.TabIndex = 21;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "Uses Flickr API";
+            this.linkLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.linkLabel4.UseCompatibleTextRendering = true;
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
+            // 
+            // linkLabel3
+            // 
+            this.linkLabel3.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel3.LinkArea = new System.Windows.Forms.LinkArea(37, 17);
+            this.linkLabel3.Location = new System.Drawing.Point(6, 194);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(200, 42);
+            this.linkLabel3.TabIndex = 22;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "Wallcreeper icon original image from Wikimedia Commons";
+            this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.linkLabel3.UseCompatibleTextRendering = true;
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.LinkArea = new System.Windows.Forms.LinkArea(13, 11);
+            this.linkLabel2.Location = new System.Drawing.Point(224, 165);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(187, 25);
+            this.linkLabel2.TabIndex = 23;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Developed by Winterstark";
+            this.linkLabel2.UseCompatibleTextRendering = true;
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(225, 137);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(258, 19);
+            this.linkLabel1.TabIndex = 24;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "github.com/Winterstark/Wallcreeper";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Font = new System.Drawing.Font("Candara", 12F);
+            this.lblVersion.Location = new System.Drawing.Point(451, 95);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(36, 19);
+            this.lblVersion.TabIndex = 16;
+            this.lblVersion.Text = "v1.0";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Candara", 39.75F, System.Drawing.FontStyle.Bold);
+            this.label26.Location = new System.Drawing.Point(213, 31);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(305, 64);
+            this.label26.TabIndex = 17;
+            this.label26.Text = "Wallcreeper";
             // 
             // lblStatus
             // 
@@ -1127,6 +1271,9 @@
             this.tabOptions.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackUpdate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWCheck)).EndInit();
+            this.tabAbout.ResumeLayout(false);
+            this.tabAbout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWIcon)).EndInit();
             this.ResumeLayout(false);
 
@@ -1222,6 +1369,16 @@
         private System.Windows.Forms.Label lblDropboxDisabled;
         private System.Windows.Forms.Label lblLocalDisabled;
         private System.Windows.Forms.Button buttWallSourcesSaveChanges;
+        private System.Windows.Forms.TabPage tabAbout;
+        private System.Windows.Forms.LinkLabel linkLabel8;
+        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.LinkLabel linkLabel5;
+        private System.Windows.Forms.LinkLabel linkLabel4;
+        private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        public System.Windows.Forms.Label lblVersion;
+        private System.Windows.Forms.Label label26;
 
 
 

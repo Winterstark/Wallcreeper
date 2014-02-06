@@ -1,7 +1,5 @@
 SKIP
 "This tab controls the various options in Wallcreeper."-[tabs]
-"Select a directory where Wallcreeper will send currently active wallpapers."->(textMainWallDir)*You do not need to assign a directory here if you are on Windows XP, or if you uncheck the option to use Windows Vista/7 wallpaper manager.
-"IMPORTANT: this folder is a temp. folder where Wallcreeper stores current wallpapers. DO NOT SET YOUR EXISTING WALLPAPER COLLECTION AS THIS FOLDER, as it might get deleted!"->(textMainWallDir)
 "You should check this option to enable Wallcreeper to be running at all times."->(checkRunAtStartup)
 "When this option is checked Wallcreeper will use windows built-in themes to change the wallpaper. Uncheck to make Wallcreeper set the wallpaper directly to the desktop."->(checkWinManager)*Not available on Windows XP because XP doesn't have a built-in wallpaper manager.
 "This value controls how often the wallpaper changes."->(comboRefresh)

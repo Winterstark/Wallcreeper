@@ -308,6 +308,9 @@ namespace Wallcreeper
             comboTime.Text = themes[comboTheme.SelectedIndex].time;
             comboWeather.Text = themes[comboTheme.SelectedIndex].weather;
             checkOverpower.Checked = themes[comboTheme.SelectedIndex].overpower;
+
+            //check if using subdir
+            textWallDir.Text = textWallDir.Text.Replace(Application.StartupPath + "\\wall_themes\\", "");
         }
 
         void noteCurrThemeVals()
@@ -373,7 +376,7 @@ namespace Wallcreeper
 
         bool themeValsChanged()
         {
-            if (currWallDir != textWallDir.Text)
+            if (currWallDir.Replace(Application.StartupPath + "\\wall_themes\\", "") != textWallDir.Text)
                 return true;
             if (currDate != comboDate.Text)
                 return true;
@@ -449,6 +452,23 @@ namespace Wallcreeper
 
         void applyWinTheme(WinTheme winTheme, bool alwaysCreateNewTheme)
         {
+            //check if current wallpaper directory has at least 1 wallpaper
+            //if it doesn't then the theme will fail to apply
+            if (Directory.GetFiles(Application.StartupPath + "\\walls_current").Length == 0)
+            {
+                //create temp. wallpaper
+                Image wall = new Bitmap(1024, 768);
+                Graphics gfx = Graphics.FromImage(wall);
+
+                gfx.FillRectangle(SystemBrushes.Control, 0, 0, 1024, 768);
+                gfx.DrawString("This is a temporary wallpaper which you should not see.", SystemFonts.DefaultFont, SystemBrushes.ControlText, 0, 0);
+                gfx.DrawString("If it persists check that you have properly configured Wallcreeper.", SystemFonts.DefaultFont, SystemBrushes.ControlText, 0, 15);
+                gfx.DrawString("Probably you have no active wallpaper themes or, if you use online sources, perhaps your Internet connection is down?", SystemFonts.DefaultFont, SystemBrushes.ControlText, 0, 30);
+                gfx.DrawString("Also try restarting Wallcreeper, or disabling the option to use Windows Vista/7 wallpaper manager.", SystemFonts.DefaultFont, SystemBrushes.ControlText, 0, 45);
+
+                wall.Save(Application.StartupPath + "\\walls_current\\temp.jpg");
+            }
+
             if (!alwaysCreateNewTheme)
             {
                 //does theme already exist?
@@ -1310,7 +1330,7 @@ namespace Wallcreeper
                 //when adding themes from a wallpaper pack, check for name conflicts
                 if (path != Application.StartupPath + "\\themes.txt" && conflict && MessageBox.Show("Theme name: " + name + ". Add it anyway?", "You already have a theme with the same name as one being added.", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == System.Windows.Forms.DialogResult.No)
                 {
-                    //load the rest of the theme4
+                    //load the rest of the theme
                     file.ReadLine();
                     file.ReadLine();
                     file.ReadLine();
@@ -1322,6 +1342,16 @@ namespace Wallcreeper
                 }
 
                 themes.Add(new Theme(name, file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine(), bool.Parse(file.ReadLine())));
+
+                //check if using subdirectory
+                foreach (Theme theme in themes)
+                {
+                    string subdir = Application.StartupPath + "\\wall_themes\\" + theme.wallDir;
+
+                    if (Directory.Exists(subdir))
+                        theme.wallDir = subdir;
+                }
+
                 comboTheme.Items.Add(themes[themes.Count - 1].name);
             }
 
@@ -1584,6 +1614,10 @@ namespace Wallcreeper
                     if (checkDate(winTheme.date))
                         validWinTheme = winTheme;
 
+                //check if Wallcreeper is set up properly
+                if (validWinTheme == null)
+                    status = "WARNING: Wallcreeper has no currently active Windows themes! Either add a new Windows Theme (in the Windows Themes tab) or disable the Windows Vista/7 wallpaper manager setting (in the Options tab)." + Environment.NewLine + status;
+
                 if (validWinTheme != null && validWinTheme.name != activeWinTheme)
                 {
                     applyWinTheme(validWinTheme, false);
@@ -1614,7 +1648,7 @@ namespace Wallcreeper
 
                     //add to dropbox themes (themes used to look for wallpaper themes on dropbox (AND flickr))
                     //accept only general themes (themes using terms like Autumn or Day) and holiday themes
-                    if (theme.name == "Full Moon" || theme.name.Contains("Holidays"))
+                    if (theme.name == "Coffee Break" || theme.name == "Full Moon" || theme.name.Contains("Holidays"))
                         dropboxThemes.Add(theme.name);
                     else if ((theme.date == "Any date" || theme.date == "Spring" || theme.date == "Summer" || theme.date == "Autumn" || theme.date == "Winter")
                         && (theme.time == "Any time" || theme.time == "Day" || theme.time == "Twilight" || theme.time == "Night"))
@@ -1964,6 +1998,12 @@ namespace Wallcreeper
 
             disableToggle = false;
 
+            //load logo
+            string logoPath = Application.StartupPath + "\\wallcreeper.jpg";
+
+            if (File.Exists(logoPath))
+                picLogo.ImageLocation = logoPath;
+
             //prepare background worker
             worker = new BackgroundWorker();
             worker.DoWork += new DoWorkEventHandler(worker_DoWork);
@@ -1995,27 +2035,27 @@ namespace Wallcreeper
                     firstRun = false;
                     SaveOptions();
 
-                    //add sample wallpaper theme?
-                    if (themes.Count == 0 && Directory.Exists(Application.StartupPath + "\\sample theme") && MessageBox.Show("Would you like to create a sample wallpaper theme?", "Wallcreeper has no wallpaper themes.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-                    {
-                        themes.Add(new Theme("Sample theme", Application.StartupPath + "\\sample theme", "Any date", "Any time", "Any weather", false));
+                    ////add sample wallpaper theme?
+                    //if (themes.Count == 0 && Directory.Exists(Application.StartupPath + "\\sample theme") && MessageBox.Show("Would you like to create a sample wallpaper theme?", "Wallcreeper has no wallpaper themes.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                    //{
+                    //    themes.Add(new Theme("Sample theme", Application.StartupPath + "\\sample theme", "Any date", "Any time", "Any weather", false));
 
-                        comboTheme.Items.Add("Sample theme");
-                        comboTheme.SelectedIndex = themes.Count - 1;
+                    //    comboTheme.Items.Add("Sample theme");
+                    //    comboTheme.SelectedIndex = themes.Count - 1;
 
-                        saveThemes();
-                    }
+                    //    saveThemes();
+                    //}
 
-                    //add sample win theme?
-                    if (currWinManager && winThemes.Count == 0 && MessageBox.Show("Would you like to add a sample windows theme?" + Environment.NewLine + "If you want to use Windows 7's theme manager you need to add a sample theme or create one yourself.", "Wallcreeper has no windows themes.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-                    {
-                        winThemes.Add(new WinTheme("Sample windows theme", comboWinThemeStyle.Items[0].ToString(), "Sky", "Windows Default", "None", "Any date"));
+                    ////add sample win theme?
+                    //if (currWinManager && winThemes.Count == 0 && MessageBox.Show("Would you like to add a sample windows theme?" + Environment.NewLine + "If you want to use Windows 7's theme manager you need to add a sample theme or create one yourself.", "Wallcreeper has no windows themes.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                    //{
+                    //    winThemes.Add(new WinTheme("Sample windows theme", comboWinThemeStyle.Items[0].ToString(), "Sky", "Windows Default", "None", "Any date"));
 
-                        comboWinTheme.Items.Add("Sample windows theme");
-                        comboWinTheme.SelectedIndex = winThemes.Count - 1;
+                    //    comboWinTheme.Items.Add("Sample windows theme");
+                    //    comboWinTheme.SelectedIndex = winThemes.Count - 1;
 
-                        saveWinThemes();
-                    }
+                    //    saveWinThemes();
+                    //}
                 }
 
                 //tutorial
@@ -2243,7 +2283,6 @@ namespace Wallcreeper
         private void buttGetData_Click(object sender, EventArgs e)
         {
             //geocoordinates
-
             try
             {
                 lblWAStatus.Text = "Downloading geocoordinates...";
@@ -2278,15 +2317,23 @@ namespace Wallcreeper
                 if (page == "error")
                     throw new Exception();
 
-                int lb = page.IndexOf("UTC+") + 3;
-                if (lb == 2)
-                    lb = page.IndexOf("UTC-") + 3;
-                if (lb == 2)
+                //int lb = page.IndexOf("UTC+") + 3;
+                //if (lb == 2)
+                //    lb = page.IndexOf("UTC-") + 3;
+                //if (lb == 2)
+                //    throw new Exception();
+
+                //int ub = page.IndexOf('"', lb);
+                //if (page[ub - 1] == '.')
+                //    ub--;
+
+                int lb = page.IndexOf("from UTC | ") + 11;
+                if (lb == 10)
                     throw new Exception();
 
-                int ub = page.IndexOf('"', lb);
-                if (page[ub - 1] == '.')
-                    ub--;
+                int ub = page.IndexOf(" ", lb);
+                if (lb == -1)
+                    throw new Exception();
 
                 textTimezone.Text = page.Substring(lb, ub - lb);
 
@@ -2622,10 +2669,13 @@ namespace Wallcreeper
             switch (tabs.SelectedIndex)
             {
                 case 1:
+                    new Tutorial(Application.StartupPath + "\\tutorials\\sources.txt", this);
+                    break;
+                case 2:
                     if (!lblXPWinThemes.Visible)
                         new Tutorial(Application.StartupPath + "\\tutorials\\winthemes.txt", this);
                     break;
-                case 2:
+                case 3:
                     new Tutorial(Application.StartupPath + "\\tutorials\\options.txt", this);
                     break;
             }
@@ -2696,6 +2746,36 @@ namespace Wallcreeper
         {
             SaveOptions();
             buttWallSourcesSaveChanges.Visible = false;
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://commons.wikimedia.org/wiki/File:Tichodroma_muraria02_cropped.jpg");
+        }
+
+        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://vclouds.deviantart.com/art/VClouds-Weather-2-179058977");
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://www.flickr.com/services/api/");
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/Winterstark/Wallcreeper");
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/Winterstark");
+        }
+
+        private void linkLabel8_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("mailto:winterstark@gmail.com");
         }
     }
 }

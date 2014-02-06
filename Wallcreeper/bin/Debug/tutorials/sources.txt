@@ -1,0 +1,7 @@
+SKIP
+"In this tab you can change what wallpaper sources the program will use."-[tabs]
+"Local wallpaper themes are the themes you have on your hard drive."->[trackLocal]
+"The organized online repository is the official collection of pre-sorted wallpaper themes hosted online that will match Wallcreeper's default themes."->[trackDropbox]
+"Wallcreeper can also download images from Flickr."->[trackFlickr]
+"Set the minimum acceptable horizontal resolution for Flickr pictures here."->(textFlickrMinW)
+"Set the minimum acceptable vertical resolution for Flickr pictures here."->(textFlickrMinH)
