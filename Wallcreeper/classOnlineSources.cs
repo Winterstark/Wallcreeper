@@ -82,21 +82,25 @@ namespace Wallcreeper
                 string src = webClient.DownloadString(url);
 
                 int lb = src.IndexOf("SharingModel.init_folder");
-                int ub = src.IndexOf("}]\"))", lb);
+                //int ub = src.IndexOf("}]\"))", lb);
+                int ub = src.IndexOf("}])", lb);
                 string seg = src.Substring(lb, ub - lb);
 
                 List<string> walls = new List<string>();
 
-                lb = seg.IndexOf("\\\"orig_url\\\": \\\"") + 16;
+                //lb = seg.IndexOf("\\\"orig_url\\\": \\\"") + 16;
+                lb = seg.IndexOf("\"orig_url\": \"") + 13;
 
-                while (lb != 15)
+                //while (lb != 15)
+                while (lb != 12)
                 {
                     ub = seg.IndexOf("?token_hash", lb);
 
                     if (!bannedWalls.Contains(seg.Substring(lb, ub - lb))) //check if wallpaper banned
                         walls.Add(seg.Substring(lb, ub - lb));
 
-                    lb = seg.IndexOf("\\\"orig_url\\\": \\\"", ub) + 16;
+                    //lb = seg.IndexOf("\\\"orig_url\\\": \\\"", ub) + 16;
+                    lb = seg.IndexOf("\"orig_url\": \"", ub) + 13;
                 }
 
                 if (walls.Count == 0)
