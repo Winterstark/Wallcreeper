@@ -8,7 +8,7 @@ Wallcreeper is a wallpaper manager for Windows with a unique feature: it selects
 
 Using such conditions means you will never get a bright and sunny wallpaper in the middle of the night, a snow-covered landscape during summer, etc.
 
-The program takes the wallpapers from pre-organized themes, which you either have to create yourself or download in the form of wallpaper packs.
+The program takes the wallpapers from pre-organized themes, which you either have to create yourself or download in the form of [wallpaper packs](http://sourceforge.net/projects/wallcreeper/files/Wallpaper%20packs/).
 
 However, in the latest version Wallcreeper enables you to use online sources such as Flickr or my cloud-based collection of already organized themes. **What this means is that after you download Wallcreeper (total size: ~800 Kb) you instantly gain access to 2000+ wallpapers that will always fit the moment.** You can also freely browse the online themes through [this file](https://github.com/Winterstark/Wallcreeper/blob/master/online%20themes.md).
 
@@ -94,10 +94,11 @@ Because the weather service is not perfect, sometimes Wallcreeper will activate 
 ### Tray menu
 
 Besides double-clicking the tray icon to bring up the main window, right-clicking it also has some useful options:
-* Change wallpaper (only works when you're not using Windows Vista/7 wallpaper manager).
-* Locate current wallpaper - display the current wallpaper on the disk (only works if the current wallpaper is a local file).
-* Open wallpaper webpage (conversely, this option only works if the current wallpaper is from an online source).
-* Save wallpaper to local theme (also works only with online sources) - saves the wallpaper to your local directory.
+* Change wallpaper (only works when you're not using Windows Vista/7 wallpaper manager)
+* Locate current wallpaper - display the current wallpaper on the disk (only works if the current wallpaper is a local file)
+* Open wallpaper webpage (conversely, this option only works if the current wallpaper is from an online source)
+* Save wallpaper to local theme (also works only with online sources) - saves the wallpaper to your local directory
+* Ban wallpaper - the current wallpaper won't appear again
 
 
 Credits
