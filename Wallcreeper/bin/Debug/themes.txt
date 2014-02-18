@@ -250,3 +250,117 @@ Any date
 12:30-13:30
 Any weather
 True
+Sexy - Spring - Day
+C:\pix\walls\Sexy - Spring - Day
+Spring
+17:00-sunset
+Any weather
+False
+Sexy - Spring - Evening
+C:\pix\walls\Sexy - Spring - Evening
+Spring
+sunset-22:00
+Any weather
+False
+Sexy - Spring - Night
+C:\pix\walls\Sexy - Spring - Night
+Spring
+22:00-sunrise
+Any weather
+False
+Sexy - Spring - Witching Hour
+C:\pix\walls\Sexy - Spring - Witching Hour
+Spring
+23:59-sunrise
+Any weather
+False
+Sexy - Summer - Day
+C:\pix\walls\Sexy - Summer - Day
+Summer
+13:00-sunset
+Any weather
+False
+Sexy - Summer - Evening
+C:\pix\walls\Sexy - Summer - Evening
+Summer
+sunset-22:00
+Any weather
+False
+Sexy - Summer - Night
+C:\pix\walls\Sexy - Summer - Night
+Summer
+22:00-sunrise
+Any weather
+False
+Sexy - Summer - Witching Hour
+C:\pix\walls\Sexy - Summer - Witching Hour
+Summer
+23:59-sunrise
+Any weather
+False
+Sexy - Autumn - Day
+C:\pix\walls\Sexy - Autumn - Day
+Autumn
+14:00-sunset
+Any weather
+False
+Sexy - Autumn - Evening
+C:\pix\walls\Sexy - Autumn - Evening
+Autumn
+sunset-22:00
+Any weather
+False
+Sexy - Autumn - Witching Hour
+C:\pix\walls\Sexy - Autumn - Witching Hour
+Autumn
+23:59-sunrise
+Any weather
+False
+Sexy - Autumn - Night
+C:\pix\walls\Sexy - Autumn - Night
+Autumn
+22:00-sunrise
+Any weather
+False
+Sexy - Winter - Day
+C:\pix\walls\Sexy - Winter - Day
+Winter
+15:00-sunset
+Any weather
+False
+Sexy - Winter - Early Evening
+C:\pix\walls\Sexy - Winter - Early Evening
+Winter
+sunset-19:00
+Any weather
+False
+Sexy - Winter - Evening
+C:\pix\walls\Sexy - Winter - Evening
+Winter
+19:00-22:00
+Any weather
+False
+Sexy - Winter - Night
+C:\pix\walls\Sexy - Winter - Night
+Winter
+22:00-next_sunrise
+Any weather
+False
+Sexy - Winter - Witching Hour
+C:\pix\walls\Sexy - Winter - Witching Hour
+Winter
+23:59-next_sunrise
+Any weather
+False
+Sexy - Holidays - Winter
+C:\pix\walls\Sexy - Holidays - Winter
+Winter holidays
+Any time
+Any weather
+False
+Sexy - Holidays - Halloween
+C:\pix\walls\Sexy - Holidays - Halloween
+Halloween
+Any time
+Any weather
+False

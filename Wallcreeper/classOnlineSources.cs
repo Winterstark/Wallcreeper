@@ -75,8 +75,6 @@ namespace Wallcreeper
                 if (url == "")
                     return "";
 
-                dropboxPage = url;
-
                 //get list of wallpapers in this theme
                 WebClient webClient = new WebClient();
                 string src = webClient.DownloadString(url);
@@ -117,6 +115,7 @@ namespace Wallcreeper
                     webClient2.DownloadFile(url, dlFolder + filename);
                 }
 
+                dropboxPage = url;
                 return dlFolder + filename;
             }
             catch (Exception e)

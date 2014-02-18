@@ -142,7 +142,7 @@ namespace Wallcreeper
 
             RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
-            if (!trayMenu.MenuItems[1].Checked)
+            if (!trayMenu.MenuItems[8].Checked)
             {
                 rkApp.SetValue("Wallcreeper", Application.ExecutablePath.ToString());
                 MessageBox.Show("Wallcreeper now runs at Windows startup.");
@@ -153,8 +153,8 @@ namespace Wallcreeper
                 MessageBox.Show("Wallcreeper no longer runs at Windows startup.");
             }
 
-            trayMenu.MenuItems[1].Checked = !trayMenu.MenuItems[1].Checked;
-            checkRunAtStartup.Checked = trayMenu.MenuItems[1].Checked;
+            trayMenu.MenuItems[8].Checked = !trayMenu.MenuItems[8].Checked;
+            checkRunAtStartup.Checked = trayMenu.MenuItems[8].Checked;
 
             disableToggle = false;
         }
@@ -1881,6 +1881,45 @@ namespace Wallcreeper
                 return WallpaperSource.Flickr;
         }
 
+        string currWallPath()
+        {
+            if (currWinManager)
+            {
+                string path = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Desktop\General", "WallpaperSource", "").ToString();
+
+                if (!File.Exists(path))
+                {
+                    if (appliedWallPath != "")
+                        return appliedWallPath;
+                    else
+                        return "";
+                }
+
+                int delimit = Misc.GetFilename(path).IndexOf('_');
+                if (delimit == -1)
+                    return path;
+
+                string themeName = Misc.GetFilename(path).Substring(0, delimit);
+                string themeDir = "";
+
+                foreach (Theme theme in themes)
+                    if (theme.name == themeName)
+                    {
+                        themeDir = theme.wallDir;
+                        break;
+                    }
+
+                if (themeDir == "")
+                    return path;
+                else
+                    return themeDir + "\\" + Misc.GetFilename(path).Substring(delimit + 1);
+            }
+            else if (appliedWallPath != "")
+                return appliedWallPath;
+            else
+                return "";
+        }
+
 
         public formMain()
         {
@@ -1977,11 +2016,12 @@ namespace Wallcreeper
                 trayMenu.MenuItems.Add(2, new MenuItem("Locate current wallpaper", new System.EventHandler(Tray_LocCurrWall_Click)));
                 trayMenu.MenuItems.Add(3, new MenuItem("Open wallpaper webpage", new System.EventHandler(Tray_OpenWallWebPage_Click)));
                 trayMenu.MenuItems.Add(4, new MenuItem("Save wallpaper to local theme", new System.EventHandler(Tray_SaveWall_Click)));
-                trayMenu.MenuItems.Add(5, new MenuItem("-"));
-                trayMenu.MenuItems.Add(6, new MenuItem("Options", new System.EventHandler(Tray_Options_Click)));
-                trayMenu.MenuItems.Add(7, new MenuItem("Run at startup", new System.EventHandler(Tray_RunAtStartup_Click)));
-                trayMenu.MenuItems.Add(8, new MenuItem("-"));
-                trayMenu.MenuItems.Add(9, new MenuItem("Exit", new System.EventHandler(Tray_Exit_Click)));
+                trayMenu.MenuItems.Add(5, new MenuItem("Ban wallpaper", new System.EventHandler(Tray_BanWall_Click)));
+                trayMenu.MenuItems.Add(6, new MenuItem("-"));
+                trayMenu.MenuItems.Add(7, new MenuItem("Options", new System.EventHandler(Tray_Options_Click)));
+                trayMenu.MenuItems.Add(8, new MenuItem("Run at startup", new System.EventHandler(Tray_RunAtStartup_Click)));
+                trayMenu.MenuItems.Add(9, new MenuItem("-"));
+                trayMenu.MenuItems.Add(10, new MenuItem("Exit", new System.EventHandler(Tray_Exit_Click)));
 
                 trayIcon.ContextMenu = trayMenu;
             }
@@ -1992,7 +2032,7 @@ namespace Wallcreeper
             RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
             if (rkApp.GetValue("Wallcreeper") != null)
             {
-                trayMenu.MenuItems[7].Checked = true;
+                trayMenu.MenuItems[8].Checked = true;
                 checkRunAtStartup.Checked = true;
             }
 
@@ -2209,42 +2249,10 @@ namespace Wallcreeper
 
         private void Tray_LocCurrWall_Click(object sender, EventArgs e)
         {
-            if (currWinManager)
-            {
-                string path = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Desktop\General", "WallpaperSource", "").ToString();
+            string path = currWallPath();
 
-                if (!File.Exists(path))
-                {
-                    if (appliedWallPath != "")
-                        Process.Start("explorer.exe", " /select, " + appliedWallPath);
-
-                    return;
-                }
-
-                int delimit = Misc.GetFilename(path).IndexOf('_');
-                if (delimit == -1)
-                {
-                    Process.Start("explorer.exe", " /select, " + path);
-                    return;
-                }
-
-                string themeName = Misc.GetFilename(path).Substring(0, delimit);
-                string themeDir = "";
-
-                foreach (Theme theme in themes)
-                    if (theme.name == themeName)
-                    {
-                        themeDir = theme.wallDir;
-                        break;
-                    }
-
-                if (themeDir == "")
-                    Process.Start("explorer.exe", " /select, " + path);
-                else
-                    Process.Start("explorer.exe", " /select, " + themeDir + "\\" + Misc.GetFilename(path).Substring(delimit + 1));
-            }
-            else if (appliedWallPath != "")
-                Process.Start("explorer.exe", " /select, " + appliedWallPath);
+            if (path != "")
+                Process.Start("explorer.exe", " /select, " + path);
             else
                 MessageBox.Show("Wallcreeper hasn't set a wallpaper yet.");
         }
@@ -2266,6 +2274,33 @@ namespace Wallcreeper
                 addWall = new formAddWall();
                 addWall.Show();
                 addWall.Init(appliedWallPath, themes, banWallpaper);
+            }
+        }
+
+        private void Tray_BanWall_Click(object sender, EventArgs e)
+        {
+            if (onlineWallSource != "")
+            {
+                if (MessageBox.Show("The wallpaper will never appear again." + Environment.NewLine + Environment.NewLine + onlineWallSource, "Are you sure you want to ban this wallpaper?", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == System.Windows.Forms.DialogResult.OK)
+                {
+                    banWallpaper(onlineWallSource);
+                    lastWallChange = new DateTime(); //force refresh
+                }
+            }
+            else
+            {
+                string path = currWallPath();
+
+                if (path != "" && File.Exists(path))
+                {
+                    if (MessageBox.Show("The wallpaper will be sent to the Recycle Bin." + Environment.NewLine + Environment.NewLine + path, "Are you sure you want to ban this wallpaper?", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == System.Windows.Forms.DialogResult.OK)
+                    {
+                        Misc.SendToRecycleBin(path);
+                        lastWallChange = new DateTime(); //force refresh
+                    }
+                }
+                else
+                    MessageBox.Show("Wallcreeper hasn't set a wallpaper yet.");
             }
         }
 
