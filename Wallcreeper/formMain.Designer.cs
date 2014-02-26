@@ -1119,7 +1119,7 @@
             // 
             this.picLogo.Location = new System.Drawing.Point(6, 16);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(200, 180);
+            this.picLogo.Size = new System.Drawing.Size(200, 160);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogo.TabIndex = 25;
             this.picLogo.TabStop = false;
@@ -1128,7 +1128,7 @@
             // 
             this.linkLabel5.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel5.LinkArea = new System.Windows.Forms.LinkArea(33, 7);
-            this.linkLabel5.Location = new System.Drawing.Point(6, 236);
+            this.linkLabel5.Location = new System.Drawing.Point(6, 273);
             this.linkLabel5.Name = "linkLabel5";
             this.linkLabel5.Size = new System.Drawing.Size(200, 32);
             this.linkLabel5.TabIndex = 20;
@@ -1140,15 +1140,14 @@
             // 
             // linkLabel4
             // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel4.LinkArea = new System.Windows.Forms.LinkArea(5, 10);
-            this.linkLabel4.Location = new System.Drawing.Point(117, 268);
+            this.linkLabel4.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel4.LinkArea = new System.Windows.Forms.LinkArea(22, 10);
+            this.linkLabel4.Location = new System.Drawing.Point(6, 179);
             this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(89, 21);
+            this.linkLabel4.Size = new System.Drawing.Size(200, 52);
             this.linkLabel4.TabIndex = 21;
             this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Uses Flickr API";
+            this.linkLabel4.Text = "This product uses the Flickr API but is not endorsed or certified by Flickr.";
             this.linkLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.linkLabel4.UseCompatibleTextRendering = true;
             this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
@@ -1157,7 +1156,7 @@
             // 
             this.linkLabel3.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel3.LinkArea = new System.Windows.Forms.LinkArea(37, 17);
-            this.linkLabel3.Location = new System.Drawing.Point(6, 194);
+            this.linkLabel3.Location = new System.Drawing.Point(6, 231);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(200, 42);
             this.linkLabel3.TabIndex = 22;

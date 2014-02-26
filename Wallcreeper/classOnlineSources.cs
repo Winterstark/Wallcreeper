@@ -19,6 +19,7 @@ namespace Wallcreeper
                                            {"Autumn - Night", "https://www.dropbox.com/sh/e22a3qez3l6bpir/SOymSxfj95"},
                                            {"Autumn - Twilight - Clear", "https://www.dropbox.com/sh/p8n25a17k05x1g6/Qg1LkldBxS"},
                                            {"Autumn - Twilight - Cloudy", "https://www.dropbox.com/sh/bxcr07ff8yibmhz/oFpcw45vip"},
+                                           {"Coffee Break", "https://www.dropbox.com/sh/wj2qa1wbo06jzlc/4yp6okr--D"},
                                            {"Day - Snow", "https://www.dropbox.com/sh/6o0xpp4n7qtti0e/F2gYA1Zbj3"},
                                            {"Full Moon", "https://www.dropbox.com/sh/pstpzpz8byumasf/5CUMj3acIX"},
                                            {"Holidays - Easter", "https://www.dropbox.com/sh/o55368yfc3yc2ll/vJ0BHZsvOA"},
