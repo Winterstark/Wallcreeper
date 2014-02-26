@@ -6,11 +6,13 @@ Wallcreeper is a wallpaper manager for Windows with a unique feature: it selects
 * Current season
 * Local weather (clear, clouds, rain, snow)
 
-Using such conditions means you will never get a bright and sunny wallpaper in the middle of the night, a snow-covered landscape during summer, etc.
+This system ensures you will never get a bright and sunny wallpaper in the middle of the night, a snow-covered landscape during summer, etc.
 
 The program takes the wallpapers from pre-organized themes, which you either have to create yourself or download in the form of [wallpaper packs](http://sourceforge.net/projects/wallcreeper/files/Wallpaper%20packs/).
 
-However, in the latest version Wallcreeper enables you to use online sources such as Flickr or my cloud-based collection of already organized themes. **What this means is that after you download Wallcreeper (total size: ~800 Kb) you instantly gain access to 2000+ wallpapers that will always fit the moment.** You can also freely browse the online themes through [this file](https://github.com/Winterstark/Wallcreeper/blob/master/online%20themes.md).
+However, in the latest version Wallcreeper enables you to use online sources such as Flickr or my own collection of already organized themes (hosted on Dropbox). **What this means is that after you download Wallcreeper (~800 Kb) you instantly gain access to 2000+ wallpapers that will always fit the moment.**
+
+You can freely browse and download the online themes through [this file](https://github.com/Winterstark/Wallcreeper/blob/master/online%20themes.md).
 
 
 Installation
@@ -25,11 +27,11 @@ Installation
 Usage
 -------
 
-After you start Wallcreeper it won't appear on the screen, but you can find its icon in the tray, double-clicking which will bring the program's main window up.
+After you start Wallcreeper it won't appear on the screen, but you can find its icon in the notification area (tray), double-clicking which will bring the program's main window up.
 
 ### Wallpaper themes
 
-A wallpaper theme is a collection of wallpapers that is only active during a specific set of conditions, namely: current time, season, and weather conditions. This allows you to always have a wallpaper matching the current conditions.
+A wallpaper theme is a collection of wallpapers that is only active during a specific set of conditions, namely: current date, time, and weather conditions.
 
 ![Screenshot: wallpaper themes](http://i.imgur.com/HAFDROe.png)
 
@@ -59,7 +61,7 @@ You can also use Flickr as another source of images, and you can specify the min
 
 ![Screenshot: Windows themes](http://i.imgur.com/Gv2IWk6.png)
 
-Wallcreeper can also control your Windows appearance through Windows Themes. This can be useful if you want Windows colors to reflect the current season, for example.
+Wallcreeper can also control your Windows appearance through Windows Themes. This can be useful if you want Windows colors to reflect the current season; for example, white during winter and blue during summer.
 
 Note that when a Theme is applied the Windows Personalization window pops up, so themes should be used sparingly.
 
@@ -67,7 +69,7 @@ Note that when a Theme is applied the Windows Personalization window pops up, so
 
 This feature enables users to share their wallpaper packs with ease. A wallpaper pack is a collection of several themes archived together with information about their active conditions.
 
-If you want to download the official wallpaper packs (in 1600x900 resolution) go [here](https://sourceforge.net/projects/wallcreeper/files/Wallpaper%20packs/).
+If you want to download the Dropbox-hosted collection go [here](https://sourceforge.net/projects/wallcreeper/files/Wallpaper%20packs/). The advantage of having the collection locally is that you can use Windows's built-in wallpaper manager (on Vista and newer), so whenever a wallpaper changes you will see a nice transition animation. You will also get the option to change wallpaper from the Desktop context menu.
 
 ### Options
 
