@@ -149,10 +149,6 @@
             this.timerRefresh.Interval = 5000;
             this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
             // 
-            // browseDiag
-            // 
-            this.browseDiag.RootFolder = System.Environment.SpecialFolder.MyComputer;
-            // 
             // trayIcon
             // 
             this.trayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("trayIcon.Icon")));

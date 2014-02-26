@@ -161,11 +161,8 @@ namespace Wallcreeper
 
         void importPack(string path)
         {
-            if (themes.Count > 0)
-                browseDiag.SelectedPath = Misc.GetDirPath(themes[0].wallDir);
-            else
-                browseDiag.SelectedPath = Environment.GetFolderPath(Environment.SpecialFolder.CommonPictures);
-            browseDiag.Description = "Select (or create) root wallpaper directory" + Environment.NewLine + "This is the folder where you want to store the wallpapers from the pack.";
+            browseDiag.SelectedPath = Application.StartupPath + "\\wall_themes";
+            browseDiag.Description = "Where do you want to store the wallpapers?" + Environment.NewLine + "If you are unsure, select the default value and they will be saved in your Wallcreeper folder.";
 
             if (browseDiag.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
                 return;
@@ -262,11 +259,9 @@ namespace Wallcreeper
 
                 //copy wallpapers
                 string destDir = browseDiag.SelectedPath + "\\" + Misc.GetFilename(dir);
-                //check for conflicts with existing dirs
-                while (Directory.Exists(destDir))
-                    destDir += "_1";
 
-                Directory.CreateDirectory(destDir);
+                if (!Directory.Exists(destDir))
+                    Directory.CreateDirectory(destDir);
 
                 foreach (string file in Directory.GetFiles(dir))
                     File.Copy(file, destDir + "\\" + Misc.GetFilename(file));
