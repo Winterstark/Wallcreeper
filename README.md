@@ -87,24 +87,26 @@ This final option is *very important*: if it is disabled then Wallcreeper sets t
 * Wallpaper changes come with the nice Windows fade animation
 * The desktop right-click context menu contains the option Next desktop background
 
-However, there are a couple of hitches with using this method. The first time you use it the Windows Personalization window will appear and you will (probably) have to close it manually. Also, sometimes the Windows wallpaper manager goes on the fritz and stops updating, in which case you will have to restart Windows Explorer.
+However, there are a couple of potential issues with using this method. The first time you use it Windows Personalization window will appear and you will (probably) have to close it manually. Also, sometimes Windows gets confused and stops updating the wallpaper theme - it fixes itself after Windows Explorer restarts.
 
 ### Changing weather status
 
-Because the weather service is not perfect, sometimes Wallcreeper will activate the wrong themes. To fix this issue click on the weather icon in the lower-right corner of the main window. Keep clicking until you activate the correct weather status. Double-click the icon to reset.
+Because the weather service is not perfect, sometimes Wallcreeper will activate the wrong theme. To fix this issue click on the weather icon in the lower-right corner of the main window. Continue clicking until you activate the correct weather status, just be careful not to click too quickly because a double-click will reset the weather icon.
 
 ### Tray menu
+
+![Screenshot: tray menu](http://i.imgur.com/RWUStHz.png)
 
 Besides double-clicking the tray icon to bring up the main window, right-clicking it also has some useful options:
 * Change wallpaper (only works when you're not using Windows Vista/7 wallpaper manager)
 * Locate current wallpaper - display the current wallpaper on the disk (only works if the current wallpaper is a local file)
-* Open wallpaper webpage (conversely, this option only works if the current wallpaper is from an online source)
+* Open wallpaper webpage (conversely, this option only works if the current wallpaper *is* from an online source)
 * Save wallpaper to local theme (also works only with online sources) - saves the wallpaper to your local directory
 * Ban wallpaper - the current wallpaper won't appear again
 
 
 Credits
 ---------
-
+* Uses [Flickr API](https://www.flickr.com/services/api/)
 * Wallcreeper icon original image from [Wikimedia Commons](http://commons.wikimedia.org/wiki/File:Tichodroma_muraria02_cropped.jpg)
 * Weather and moon phases icons by [VClouds](http://vclouds.deviantart.com/art/VClouds-Weather-2-179058977)
