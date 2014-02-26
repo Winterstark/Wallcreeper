@@ -63,6 +63,8 @@ You can also use Flickr as another source of images, and you can specify the min
 
 Wallcreeper can also control your Windows appearance through Windows Themes. This can be useful if you want Windows colors to reflect the current season; for example, white during winter and blue during summer.
 
+This feature requires you to use Windows Vista/7 wallpaper manager. If that option is unchecked then this part of the program will do nothing.
+
 Note that when a Theme is applied the Windows Personalization window pops up, so themes should be used sparingly.
 
 ### Wallpaper packs
