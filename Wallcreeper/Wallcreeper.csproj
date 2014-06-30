@@ -38,7 +38,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FlickrNet">
-      <HintPath>FlickrNet-3.4.0\FlickrNet.dll</HintPath>
+      <HintPath>FlickrNet\FlickrNet.dll</HintPath>
     </Reference>
     <Reference Include="GenericForms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
