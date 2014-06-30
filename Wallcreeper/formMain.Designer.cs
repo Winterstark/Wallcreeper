@@ -128,6 +128,7 @@
             this.picWIcon = new System.Windows.Forms.PictureBox();
             this.colorDiag = new System.Windows.Forms.ColorDialog();
             this.openDiag = new System.Windows.Forms.OpenFileDialog();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.tabs.SuspendLayout();
             this.tabWallpapers.SuspendLayout();
             this.tabWallSources.SuspendLayout();
@@ -1080,6 +1081,7 @@
             // 
             // tabAbout
             // 
+            this.tabAbout.Controls.Add(this.linkLabel6);
             this.tabAbout.Controls.Add(this.linkLabel8);
             this.tabAbout.Controls.Add(this.picLogo);
             this.tabAbout.Controls.Add(this.linkLabel5);
@@ -1123,13 +1125,13 @@
             // linkLabel5
             // 
             this.linkLabel5.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel5.LinkArea = new System.Windows.Forms.LinkArea(33, 7);
-            this.linkLabel5.Location = new System.Drawing.Point(6, 273);
+            this.linkLabel5.LinkArea = new System.Windows.Forms.LinkArea(26, 7);
+            this.linkLabel5.Location = new System.Drawing.Point(-16, 294);
             this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(200, 32);
+            this.linkLabel5.Size = new System.Drawing.Size(222, 23);
             this.linkLabel5.TabIndex = 20;
             this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Weather and moon phases icons by VClouds";
+            this.linkLabel5.Text = "Weather and moon icons by VClouds";
             this.linkLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.linkLabel5.UseCompatibleTextRendering = true;
             this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
@@ -1152,7 +1154,7 @@
             // 
             this.linkLabel3.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel3.LinkArea = new System.Windows.Forms.LinkArea(37, 17);
-            this.linkLabel3.Location = new System.Drawing.Point(6, 231);
+            this.linkLabel3.Location = new System.Drawing.Point(6, 252);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(200, 42);
             this.linkLabel3.TabIndex = 22;
@@ -1232,6 +1234,21 @@
             // openDiag
             // 
             this.openDiag.Filter = "Wallcreeper pack|*.wcp|Unarchived pack info|*.txt";
+            // 
+            // linkLabel6
+            // 
+            this.linkLabel6.AutoSize = true;
+            this.linkLabel6.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel6.LinkArea = new System.Windows.Forms.LinkArea(9, 10);
+            this.linkLabel6.Location = new System.Drawing.Point(53, 231);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(153, 21);
+            this.linkLabel6.TabIndex = 27;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = "Uses the Flickr.Net library";
+            this.linkLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.linkLabel6.UseCompatibleTextRendering = true;
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
             // 
             // formMain
             // 
@@ -1374,6 +1391,7 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         public System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.LinkLabel linkLabel6;
 
 
 

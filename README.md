@@ -108,5 +108,6 @@ Besides double-clicking the tray icon to bring up the main window, right-clickin
 Credits
 ---------
 * Uses [Flickr API](https://www.flickr.com/services/api/)
+* Flickr API accessed through the [Flickr.Net](http://flickrnet.codeplex.com/) library
 * Wallcreeper icon original image from [Wikimedia Commons](http://commons.wikimedia.org/wiki/File:Tichodroma_muraria02_cropped.jpg)
 * Weather and moon phases icons by [VClouds](http://vclouds.deviantart.com/art/VClouds-Weather-2-179058977)

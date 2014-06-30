@@ -2807,5 +2807,10 @@ namespace Wallcreeper
         {
             Process.Start("mailto:winterstark@gmail.com");
         }
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://flickrnet.codeplex.com/");
+        }
     }
 }
