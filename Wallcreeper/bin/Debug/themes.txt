@@ -265,20 +265,14 @@ False
 Sexy - Spring - Night
 C:\pix\walls\Sexy - Spring - Night
 Spring
-22:00-sunrise
-Any weather
-False
-Sexy - Spring - Witching Hour
-C:\pix\walls\Sexy - Spring - Witching Hour
-Spring
-23:59-sunrise
+22:00-next_sunrise
 Any weather
 False
 Sexy - Summer - Day
 C:\pix\walls\Sexy - Summer - Day
 Summer
-13:00-sunset
-Any weather
+15:00-sunset
+Clear
 False
 Sexy - Summer - Evening
 C:\pix\walls\Sexy - Summer - Evening
@@ -289,13 +283,7 @@ False
 Sexy - Summer - Night
 C:\pix\walls\Sexy - Summer - Night
 Summer
-22:00-sunrise
-Any weather
-False
-Sexy - Summer - Witching Hour
-C:\pix\walls\Sexy - Summer - Witching Hour
-Summer
-23:59-sunrise
+22:00-next_sunrise
 Any weather
 False
 Sexy - Autumn - Day
@@ -308,12 +296,6 @@ Sexy - Autumn - Evening
 C:\pix\walls\Sexy - Autumn - Evening
 Autumn
 sunset-22:00
-Any weather
-False
-Sexy - Autumn - Witching Hour
-C:\pix\walls\Sexy - Autumn - Witching Hour
-Autumn
-23:59-sunrise
 Any weather
 False
 Sexy - Autumn - Night
@@ -344,12 +326,6 @@ Sexy - Winter - Night
 C:\pix\walls\Sexy - Winter - Night
 Winter
 22:00-next_sunrise
-Any weather
-False
-Sexy - Winter - Witching Hour
-C:\pix\walls\Sexy - Winter - Witching Hour
-Winter
-23:59-next_sunrise
 Any weather
 False
 Sexy - Holidays - Winter

@@ -115,6 +115,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tabAbout = new System.Windows.Forms.TabPage();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabel8 = new System.Windows.Forms.LinkLabel();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
@@ -128,7 +129,6 @@
             this.picWIcon = new System.Windows.Forms.PictureBox();
             this.colorDiag = new System.Windows.Forms.ColorDialog();
             this.openDiag = new System.Windows.Forms.OpenFileDialog();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.tabs.SuspendLayout();
             this.tabWallpapers.SuspendLayout();
             this.tabWallSources.SuspendLayout();
@@ -546,9 +546,9 @@
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(78, 22);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(320, 13);
+            this.label23.Size = new System.Drawing.Size(323, 13);
             this.label23.TabIndex = 0;
-            this.label23.Text = "Adjust these slides to control how often a particular source is used:";
+            this.label23.Text = "Adjust these sliders to control how often a particular source is used:";
             // 
             // lblFlickrDisabled
             // 
@@ -1099,6 +1099,21 @@
             this.tabAbout.Text = "About";
             this.tabAbout.UseVisualStyleBackColor = true;
             // 
+            // linkLabel6
+            // 
+            this.linkLabel6.AutoSize = true;
+            this.linkLabel6.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel6.LinkArea = new System.Windows.Forms.LinkArea(9, 10);
+            this.linkLabel6.Location = new System.Drawing.Point(53, 231);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(153, 21);
+            this.linkLabel6.TabIndex = 27;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = "Uses the Flickr.Net library";
+            this.linkLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.linkLabel6.UseCompatibleTextRendering = true;
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
+            // 
             // linkLabel8
             // 
             this.linkLabel8.Font = new System.Drawing.Font("Candara", 10F);
@@ -1234,21 +1249,6 @@
             // openDiag
             // 
             this.openDiag.Filter = "Wallcreeper pack|*.wcp|Unarchived pack info|*.txt";
-            // 
-            // linkLabel6
-            // 
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel6.LinkArea = new System.Windows.Forms.LinkArea(9, 10);
-            this.linkLabel6.Location = new System.Drawing.Point(53, 231);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(153, 21);
-            this.linkLabel6.TabIndex = 27;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "Uses the Flickr.Net library";
-            this.linkLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.linkLabel6.UseCompatibleTextRendering = true;
-            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
             // 
             // formMain
             // 

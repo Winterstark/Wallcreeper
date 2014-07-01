@@ -93,7 +93,8 @@ namespace Wallcreeper
                 //while (lb != 15)
                 while (lb != 12)
                 {
-                    ub = seg.IndexOf("?token_hash", lb);
+                    //ub = seg.IndexOf("?token_hash", lb);
+                    ub = seg.IndexOf("?", lb);
 
                     if (!bannedWalls.Contains(seg.Substring(lb, ub - lb))) //check if wallpaper banned
                         walls.Add(seg.Substring(lb, ub - lb));
@@ -113,7 +114,7 @@ namespace Wallcreeper
 
                 using (WebClient webClient2 = new WebClient())
                 {
-                    webClient2.DownloadFile(url, dlFolder + filename);
+                    webClient2.DownloadFile(url + "?raw=1", dlFolder + filename);
                 }
 
                 dropboxPage = url;

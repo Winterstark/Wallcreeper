@@ -1748,10 +1748,20 @@ namespace Wallcreeper
                                 applyWallpaper(newWalls[rand.Next(newWalls.Count)]);
                             break;
                         case WallpaperSource.Dropbox:
-                            applyWallpaper(Dropbox.GetWallpaper(pickRandomTheme(dropboxThemes), createSubdir("temp dl", true), out onlineWallSource, bannedWalls));
+                            string dropboxPath = Dropbox.GetWallpaper(pickRandomTheme(dropboxThemes), createSubdir("temp dl", true), out onlineWallSource, bannedWalls);
+
+                            if (dropboxPath != "")
+                                applyWallpaper(dropboxPath);
+                            else
+                                MessageBox.Show("Error while downloading wallpaper from online repository (Dropbox).");
                             break;
                         case WallpaperSource.Flickr:
-                            applyWallpaper(FlickrSource.GetWallpaper(pickRandomTheme(dropboxThemes), currFlickrMinW, currFlickrMinH, createSubdir("temp dl", true), out onlineWallSource, bannedWalls, banWallpaper));
+                            string flickrPath = FlickrSource.GetWallpaper(pickRandomTheme(dropboxThemes), currFlickrMinW, currFlickrMinH, createSubdir("temp dl", true), out onlineWallSource, bannedWalls, banWallpaper);
+
+                            if (flickrPath != "")
+                                applyWallpaper(flickrPath);
+                            else
+                                MessageBox.Show("Error while downloading wallpaper from Flickr.");
                             break;
                     }
 
