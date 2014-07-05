@@ -168,7 +168,7 @@
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
             this.tabs.Size = new System.Drawing.Size(531, 349);
-            this.tabs.TabIndex = 42;
+            this.tabs.TabIndex = 1;
             this.tabs.SelectedIndexChanged += new System.EventHandler(this.tabs_SelectedIndexChanged);
             // 
             // tabWallpapers
@@ -206,7 +206,7 @@
             this.buttDLWallPacks.Location = new System.Drawing.Point(398, 137);
             this.buttDLWallPacks.Name = "buttDLWallPacks";
             this.buttDLWallPacks.Size = new System.Drawing.Size(100, 46);
-            this.buttDLWallPacks.TabIndex = 54;
+            this.buttDLWallPacks.TabIndex = 14;
             this.buttDLWallPacks.Text = "Download wallpaper packs";
             this.buttDLWallPacks.UseVisualStyleBackColor = true;
             this.buttDLWallPacks.Click += new System.EventHandler(this.buttDLWallPacks_Click);
@@ -216,7 +216,7 @@
             this.buttImportPack.Location = new System.Drawing.Point(398, 189);
             this.buttImportPack.Name = "buttImportPack";
             this.buttImportPack.Size = new System.Drawing.Size(100, 46);
-            this.buttImportPack.TabIndex = 53;
+            this.buttImportPack.TabIndex = 15;
             this.buttImportPack.Text = "Import wallpaper pack";
             this.buttImportPack.UseVisualStyleBackColor = true;
             this.buttImportPack.Click += new System.EventHandler(this.buttImportPack_Click);
@@ -226,7 +226,7 @@
             this.buttExportPack.Location = new System.Drawing.Point(398, 241);
             this.buttExportPack.Name = "buttExportPack";
             this.buttExportPack.Size = new System.Drawing.Size(100, 46);
-            this.buttExportPack.TabIndex = 52;
+            this.buttExportPack.TabIndex = 16;
             this.buttExportPack.Text = "Export wallpaper pack";
             this.buttExportPack.UseVisualStyleBackColor = true;
             this.buttExportPack.Click += new System.EventHandler(this.buttExportPack_Click);
@@ -236,7 +236,7 @@
             this.buttDeleteTheme.Location = new System.Drawing.Point(398, 100);
             this.buttDeleteTheme.Name = "buttDeleteTheme";
             this.buttDeleteTheme.Size = new System.Drawing.Size(100, 23);
-            this.buttDeleteTheme.TabIndex = 51;
+            this.buttDeleteTheme.TabIndex = 13;
             this.buttDeleteTheme.Text = "Delete";
             this.buttDeleteTheme.UseVisualStyleBackColor = true;
             this.buttDeleteTheme.Visible = false;
@@ -247,7 +247,7 @@
             this.buttRenameTheme.Location = new System.Drawing.Point(398, 71);
             this.buttRenameTheme.Name = "buttRenameTheme";
             this.buttRenameTheme.Size = new System.Drawing.Size(100, 23);
-            this.buttRenameTheme.TabIndex = 50;
+            this.buttRenameTheme.TabIndex = 12;
             this.buttRenameTheme.Text = "Rename";
             this.buttRenameTheme.UseVisualStyleBackColor = true;
             this.buttRenameTheme.Visible = false;
@@ -258,7 +258,7 @@
             this.buttCloneTheme.Location = new System.Drawing.Point(398, 42);
             this.buttCloneTheme.Name = "buttCloneTheme";
             this.buttCloneTheme.Size = new System.Drawing.Size(100, 23);
-            this.buttCloneTheme.TabIndex = 49;
+            this.buttCloneTheme.TabIndex = 11;
             this.buttCloneTheme.Text = "Create clone";
             this.buttCloneTheme.UseVisualStyleBackColor = true;
             this.buttCloneTheme.Visible = false;
@@ -269,7 +269,7 @@
             this.buttNewTheme.Location = new System.Drawing.Point(398, 13);
             this.buttNewTheme.Name = "buttNewTheme";
             this.buttNewTheme.Size = new System.Drawing.Size(100, 23);
-            this.buttNewTheme.TabIndex = 48;
+            this.buttNewTheme.TabIndex = 10;
             this.buttNewTheme.Text = "New theme";
             this.buttNewTheme.UseVisualStyleBackColor = true;
             this.buttNewTheme.Click += new System.EventHandler(this.buttNewTheme_Click);
@@ -279,7 +279,7 @@
             this.buttSaveThemeChanges.Location = new System.Drawing.Point(59, 250);
             this.buttSaveThemeChanges.Name = "buttSaveThemeChanges";
             this.buttSaveThemeChanges.Size = new System.Drawing.Size(284, 23);
-            this.buttSaveThemeChanges.TabIndex = 47;
+            this.buttSaveThemeChanges.TabIndex = 9;
             this.buttSaveThemeChanges.Text = "Save changes to theme";
             this.buttSaveThemeChanges.UseVisualStyleBackColor = true;
             this.buttSaveThemeChanges.Visible = false;
@@ -290,7 +290,7 @@
             this.buttBrowse.Location = new System.Drawing.Point(349, 70);
             this.buttBrowse.Name = "buttBrowse";
             this.buttBrowse.Size = new System.Drawing.Size(24, 23);
-            this.buttBrowse.TabIndex = 46;
+            this.buttBrowse.TabIndex = 4;
             this.buttBrowse.Text = "...";
             this.buttBrowse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttBrowse.UseVisualStyleBackColor = true;
@@ -303,7 +303,7 @@
             this.checkOverpower.Location = new System.Drawing.Point(155, 218);
             this.checkOverpower.Name = "checkOverpower";
             this.checkOverpower.Size = new System.Drawing.Size(190, 17);
-            this.checkOverpower.TabIndex = 45;
+            this.checkOverpower.TabIndex = 8;
             this.checkOverpower.Text = "When active, disable other themes";
             this.checkOverpower.UseVisualStyleBackColor = true;
             this.checkOverpower.CheckedChanged += new System.EventHandler(this.checkOverpower_CheckedChanged);
@@ -321,7 +321,7 @@
             this.comboWeather.Location = new System.Drawing.Point(61, 191);
             this.comboWeather.Name = "comboWeather";
             this.comboWeather.Size = new System.Drawing.Size(284, 21);
-            this.comboWeather.TabIndex = 44;
+            this.comboWeather.TabIndex = 7;
             this.comboWeather.SelectedIndexChanged += new System.EventHandler(this.comboWeather_SelectedIndexChanged);
             // 
             // comboTime
@@ -335,7 +335,7 @@
             this.comboTime.Location = new System.Drawing.Point(61, 151);
             this.comboTime.Name = "comboTime";
             this.comboTime.Size = new System.Drawing.Size(284, 21);
-            this.comboTime.TabIndex = 43;
+            this.comboTime.TabIndex = 6;
             this.comboTime.TextChanged += new System.EventHandler(this.comboTime_TextChanged);
             // 
             // comboDate
@@ -353,7 +353,7 @@
             this.comboDate.Location = new System.Drawing.Point(59, 111);
             this.comboDate.Name = "comboDate";
             this.comboDate.Size = new System.Drawing.Size(284, 21);
-            this.comboDate.TabIndex = 42;
+            this.comboDate.TabIndex = 5;
             this.comboDate.TextChanged += new System.EventHandler(this.comboDate_TextChanged);
             // 
             // textWallDir
@@ -361,7 +361,7 @@
             this.textWallDir.Location = new System.Drawing.Point(59, 72);
             this.textWallDir.Name = "textWallDir";
             this.textWallDir.Size = new System.Drawing.Size(284, 20);
-            this.textWallDir.TabIndex = 41;
+            this.textWallDir.TabIndex = 3;
             this.textWallDir.TextChanged += new System.EventHandler(this.textWallDir_TextChanged);
             // 
             // label10
@@ -407,7 +407,7 @@
             this.comboTheme.Location = new System.Drawing.Point(119, 15);
             this.comboTheme.Name = "comboTheme";
             this.comboTheme.Size = new System.Drawing.Size(252, 21);
-            this.comboTheme.TabIndex = 32;
+            this.comboTheme.TabIndex = 2;
             this.comboTheme.SelectedIndexChanged += new System.EventHandler(this.comboTheme_SelectedIndexChanged);
             // 
             // label1
@@ -449,7 +449,7 @@
             this.buttWallSourcesSaveChanges.Location = new System.Drawing.Point(149, 259);
             this.buttWallSourcesSaveChanges.Name = "buttWallSourcesSaveChanges";
             this.buttWallSourcesSaveChanges.Size = new System.Drawing.Size(249, 28);
-            this.buttWallSourcesSaveChanges.TabIndex = 61;
+            this.buttWallSourcesSaveChanges.TabIndex = 7;
             this.buttWallSourcesSaveChanges.Text = "Save changes";
             this.buttWallSourcesSaveChanges.UseVisualStyleBackColor = true;
             this.buttWallSourcesSaveChanges.Visible = false;
@@ -460,7 +460,7 @@
             this.textFlickrMinH.Location = new System.Drawing.Point(343, 215);
             this.textFlickrMinH.Name = "textFlickrMinH";
             this.textFlickrMinH.Size = new System.Drawing.Size(55, 20);
-            this.textFlickrMinH.TabIndex = 4;
+            this.textFlickrMinH.TabIndex = 6;
             this.textFlickrMinH.TextChanged += new System.EventHandler(this.textFlickrMinH_TextChanged);
             // 
             // textFlickrMinW
@@ -468,7 +468,7 @@
             this.textFlickrMinW.Location = new System.Drawing.Point(264, 215);
             this.textFlickrMinW.Name = "textFlickrMinW";
             this.textFlickrMinW.Size = new System.Drawing.Size(55, 20);
-            this.textFlickrMinW.TabIndex = 4;
+            this.textFlickrMinW.TabIndex = 5;
             this.textFlickrMinW.TextChanged += new System.EventHandler(this.textFlickrMinW_TextChanged);
             // 
             // trackFlickr
@@ -478,7 +478,7 @@
             this.trackFlickr.Maximum = 100;
             this.trackFlickr.Name = "trackFlickr";
             this.trackFlickr.Size = new System.Drawing.Size(222, 45);
-            this.trackFlickr.TabIndex = 3;
+            this.trackFlickr.TabIndex = 4;
             this.trackFlickr.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackFlickr.Scroll += new System.EventHandler(this.trackFlickr_Scroll);
             // 
@@ -489,7 +489,7 @@
             this.trackDropbox.Maximum = 100;
             this.trackDropbox.Name = "trackDropbox";
             this.trackDropbox.Size = new System.Drawing.Size(222, 45);
-            this.trackDropbox.TabIndex = 2;
+            this.trackDropbox.TabIndex = 3;
             this.trackDropbox.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackDropbox.Scroll += new System.EventHandler(this.trackDropbox_Scroll);
             // 
@@ -500,7 +500,7 @@
             this.trackLocal.Maximum = 100;
             this.trackLocal.Name = "trackLocal";
             this.trackLocal.Size = new System.Drawing.Size(222, 45);
-            this.trackLocal.TabIndex = 1;
+            this.trackLocal.TabIndex = 2;
             this.trackLocal.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackLocal.Value = 100;
             this.trackLocal.Scroll += new System.EventHandler(this.trackLocal_Scroll);
@@ -644,7 +644,7 @@
             this.comboWinThemeDate.Location = new System.Drawing.Point(61, 233);
             this.comboWinThemeDate.Name = "comboWinThemeDate";
             this.comboWinThemeDate.Size = new System.Drawing.Size(214, 21);
-            this.comboWinThemeDate.TabIndex = 69;
+            this.comboWinThemeDate.TabIndex = 8;
             this.comboWinThemeDate.TextChanged += new System.EventHandler(this.comboWinThemeDate_TextChanged);
             // 
             // label20
@@ -663,7 +663,7 @@
             this.comboWinThemeStyle.Location = new System.Drawing.Point(61, 73);
             this.comboWinThemeStyle.Name = "comboWinThemeStyle";
             this.comboWinThemeStyle.Size = new System.Drawing.Size(214, 21);
-            this.comboWinThemeStyle.TabIndex = 67;
+            this.comboWinThemeStyle.TabIndex = 3;
             this.comboWinThemeStyle.SelectedIndexChanged += new System.EventHandler(this.comboWinThemeStyle_SelectedIndexChanged);
             // 
             // label19
@@ -682,7 +682,7 @@
             this.comboWinThemeSSaver.Location = new System.Drawing.Point(61, 193);
             this.comboWinThemeSSaver.Name = "comboWinThemeSSaver";
             this.comboWinThemeSSaver.Size = new System.Drawing.Size(214, 21);
-            this.comboWinThemeSSaver.TabIndex = 65;
+            this.comboWinThemeSSaver.TabIndex = 7;
             this.comboWinThemeSSaver.SelectedIndexChanged += new System.EventHandler(this.comboWinThemeSSaver_SelectedIndexChanged);
             // 
             // label18
@@ -701,7 +701,7 @@
             this.comboWinThemeSounds.Location = new System.Drawing.Point(61, 153);
             this.comboWinThemeSounds.Name = "comboWinThemeSounds";
             this.comboWinThemeSounds.Size = new System.Drawing.Size(214, 21);
-            this.comboWinThemeSounds.TabIndex = 63;
+            this.comboWinThemeSounds.TabIndex = 6;
             this.comboWinThemeSounds.SelectedIndexChanged += new System.EventHandler(this.comboWinThemeSounds_SelectedIndexChanged);
             // 
             // label17
@@ -718,7 +718,7 @@
             this.buttColorPicker.Location = new System.Drawing.Point(281, 111);
             this.buttColorPicker.Name = "buttColorPicker";
             this.buttColorPicker.Size = new System.Drawing.Size(43, 23);
-            this.buttColorPicker.TabIndex = 61;
+            this.buttColorPicker.TabIndex = 5;
             this.buttColorPicker.Text = "Pick";
             this.buttColorPicker.UseVisualStyleBackColor = true;
             this.buttColorPicker.Click += new System.EventHandler(this.buttColorPicker_Click);
@@ -729,7 +729,7 @@
             this.comboWinThemeColor.Location = new System.Drawing.Point(61, 113);
             this.comboWinThemeColor.Name = "comboWinThemeColor";
             this.comboWinThemeColor.Size = new System.Drawing.Size(214, 21);
-            this.comboWinThemeColor.TabIndex = 60;
+            this.comboWinThemeColor.TabIndex = 4;
             this.comboWinThemeColor.TextChanged += new System.EventHandler(this.comboWinThemeColor_TextChanged);
             // 
             // label16
@@ -746,7 +746,7 @@
             this.buttDelWinTheme.Location = new System.Drawing.Point(399, 102);
             this.buttDelWinTheme.Name = "buttDelWinTheme";
             this.buttDelWinTheme.Size = new System.Drawing.Size(100, 23);
-            this.buttDelWinTheme.TabIndex = 58;
+            this.buttDelWinTheme.TabIndex = 13;
             this.buttDelWinTheme.Text = "Delete";
             this.buttDelWinTheme.UseVisualStyleBackColor = true;
             this.buttDelWinTheme.Visible = false;
@@ -757,7 +757,7 @@
             this.buttRenameWinTheme.Location = new System.Drawing.Point(399, 73);
             this.buttRenameWinTheme.Name = "buttRenameWinTheme";
             this.buttRenameWinTheme.Size = new System.Drawing.Size(100, 23);
-            this.buttRenameWinTheme.TabIndex = 57;
+            this.buttRenameWinTheme.TabIndex = 12;
             this.buttRenameWinTheme.Text = "Rename";
             this.buttRenameWinTheme.UseVisualStyleBackColor = true;
             this.buttRenameWinTheme.Visible = false;
@@ -768,7 +768,7 @@
             this.buttCloneWinTheme.Location = new System.Drawing.Point(399, 44);
             this.buttCloneWinTheme.Name = "buttCloneWinTheme";
             this.buttCloneWinTheme.Size = new System.Drawing.Size(100, 23);
-            this.buttCloneWinTheme.TabIndex = 56;
+            this.buttCloneWinTheme.TabIndex = 11;
             this.buttCloneWinTheme.Text = "Create clone";
             this.buttCloneWinTheme.UseVisualStyleBackColor = true;
             this.buttCloneWinTheme.Click += new System.EventHandler(this.buttCloneWinTheme_Click);
@@ -778,7 +778,7 @@
             this.buttNewWinTheme.Location = new System.Drawing.Point(399, 15);
             this.buttNewWinTheme.Name = "buttNewWinTheme";
             this.buttNewWinTheme.Size = new System.Drawing.Size(100, 23);
-            this.buttNewWinTheme.TabIndex = 55;
+            this.buttNewWinTheme.TabIndex = 10;
             this.buttNewWinTheme.Text = "New theme";
             this.buttNewWinTheme.UseVisualStyleBackColor = true;
             this.buttNewWinTheme.Click += new System.EventHandler(this.buttNewWinTheme_Click);
@@ -788,7 +788,7 @@
             this.buttSaveWinTheme.Location = new System.Drawing.Point(330, 228);
             this.buttSaveWinTheme.Name = "buttSaveWinTheme";
             this.buttSaveWinTheme.Size = new System.Drawing.Size(169, 28);
-            this.buttSaveWinTheme.TabIndex = 54;
+            this.buttSaveWinTheme.TabIndex = 9;
             this.buttSaveWinTheme.Text = "Save changes to theme";
             this.buttSaveWinTheme.UseVisualStyleBackColor = true;
             this.buttSaveWinTheme.Visible = false;
@@ -801,7 +801,7 @@
             this.comboWinTheme.Location = new System.Drawing.Point(120, 17);
             this.comboWinTheme.Name = "comboWinTheme";
             this.comboWinTheme.Size = new System.Drawing.Size(252, 21);
-            this.comboWinTheme.TabIndex = 53;
+            this.comboWinTheme.TabIndex = 2;
             this.comboWinTheme.SelectedIndexChanged += new System.EventHandler(this.comboWinTheme_SelectedIndexChanged);
             // 
             // label15
@@ -869,7 +869,7 @@
             this.comboRefresh.Location = new System.Drawing.Point(151, 30);
             this.comboRefresh.Name = "comboRefresh";
             this.comboRefresh.Size = new System.Drawing.Size(98, 21);
-            this.comboRefresh.TabIndex = 68;
+            this.comboRefresh.TabIndex = 2;
             this.comboRefresh.SelectedIndexChanged += new System.EventHandler(this.comboRefresh_SelectedIndexChanged);
             // 
             // checkWinManager
@@ -878,7 +878,7 @@
             this.checkWinManager.Location = new System.Drawing.Point(279, 60);
             this.checkWinManager.Name = "checkWinManager";
             this.checkWinManager.Size = new System.Drawing.Size(221, 17);
-            this.checkWinManager.TabIndex = 67;
+            this.checkWinManager.TabIndex = 5;
             this.checkWinManager.Text = "Use Windows Vista/7 wallpaper manager";
             this.checkWinManager.UseVisualStyleBackColor = true;
             this.checkWinManager.CheckedChanged += new System.EventHandler(this.checkWinManager_CheckedChanged);
@@ -889,7 +889,7 @@
             this.checkShowChangelog.Location = new System.Drawing.Point(310, 221);
             this.checkShowChangelog.Name = "checkShowChangelog";
             this.checkShowChangelog.Size = new System.Drawing.Size(166, 17);
-            this.checkShowChangelog.TabIndex = 66;
+            this.checkShowChangelog.TabIndex = 12;
             this.checkShowChangelog.Text = "Show changelog after update";
             this.checkShowChangelog.UseVisualStyleBackColor = true;
             this.checkShowChangelog.CheckedChanged += new System.EventHandler(this.checkShowChangelog_CheckedChanged);
@@ -919,7 +919,7 @@
             this.trackUpdate.Maximum = 3;
             this.trackUpdate.Name = "trackUpdate";
             this.trackUpdate.Size = new System.Drawing.Size(153, 45);
-            this.trackUpdate.TabIndex = 63;
+            this.trackUpdate.TabIndex = 11;
             this.trackUpdate.Scroll += new System.EventHandler(this.trackUpdate_Scroll);
             // 
             // lblWAStatus
@@ -935,7 +935,7 @@
             this.checkRunAtStartup.Location = new System.Drawing.Point(279, 32);
             this.checkRunAtStartup.Name = "checkRunAtStartup";
             this.checkRunAtStartup.Size = new System.Drawing.Size(212, 17);
-            this.checkRunAtStartup.TabIndex = 61;
+            this.checkRunAtStartup.TabIndex = 4;
             this.checkRunAtStartup.Text = "Start Wallcreeper when Windows starts";
             this.checkRunAtStartup.UseVisualStyleBackColor = true;
             this.checkRunAtStartup.CheckedChanged += new System.EventHandler(this.checkRunAtStartup_CheckedChanged);
@@ -945,7 +945,7 @@
             this.buttSaveOptions.Location = new System.Drawing.Point(151, 254);
             this.buttSaveOptions.Name = "buttSaveOptions";
             this.buttSaveOptions.Size = new System.Drawing.Size(249, 28);
-            this.buttSaveOptions.TabIndex = 60;
+            this.buttSaveOptions.TabIndex = 13;
             this.buttSaveOptions.Text = "Save options";
             this.buttSaveOptions.UseVisualStyleBackColor = true;
             this.buttSaveOptions.Visible = false;
@@ -956,7 +956,7 @@
             this.textTimezone.Location = new System.Drawing.Point(151, 156);
             this.textTimezone.Name = "textTimezone";
             this.textTimezone.Size = new System.Drawing.Size(49, 20);
-            this.textTimezone.TabIndex = 59;
+            this.textTimezone.TabIndex = 10;
             this.textTimezone.TextChanged += new System.EventHandler(this.textTimezone_TextChanged);
             // 
             // textLongitude
@@ -964,7 +964,7 @@
             this.textLongitude.Location = new System.Drawing.Point(310, 130);
             this.textLongitude.Name = "textLongitude";
             this.textLongitude.Size = new System.Drawing.Size(90, 20);
-            this.textLongitude.TabIndex = 58;
+            this.textLongitude.TabIndex = 9;
             this.textLongitude.TextChanged += new System.EventHandler(this.textLongitude_TextChanged);
             // 
             // textLatitude
@@ -972,7 +972,7 @@
             this.textLatitude.Location = new System.Drawing.Point(151, 130);
             this.textLatitude.Name = "textLatitude";
             this.textLatitude.Size = new System.Drawing.Size(90, 20);
-            this.textLatitude.TabIndex = 57;
+            this.textLatitude.TabIndex = 8;
             this.textLatitude.TextChanged += new System.EventHandler(this.textLatitude_TextChanged);
             // 
             // buttGetData
@@ -980,7 +980,7 @@
             this.buttGetData.Location = new System.Drawing.Point(406, 102);
             this.buttGetData.Name = "buttGetData";
             this.buttGetData.Size = new System.Drawing.Size(60, 23);
-            this.buttGetData.TabIndex = 56;
+            this.buttGetData.TabIndex = 7;
             this.buttGetData.Text = "Get data";
             this.buttGetData.UseVisualStyleBackColor = true;
             this.buttGetData.Click += new System.EventHandler(this.buttGetData_Click);
@@ -990,7 +990,7 @@
             this.textLocation.Location = new System.Drawing.Point(151, 104);
             this.textLocation.Name = "textLocation";
             this.textLocation.Size = new System.Drawing.Size(249, 20);
-            this.textLocation.TabIndex = 55;
+            this.textLocation.TabIndex = 6;
             this.textLocation.TextChanged += new System.EventHandler(this.textLocation_TextChanged);
             // 
             // numWCheck
@@ -1008,7 +1008,7 @@
             0});
             this.numWCheck.Name = "numWCheck";
             this.numWCheck.Size = new System.Drawing.Size(49, 20);
-            this.numWCheck.TabIndex = 52;
+            this.numWCheck.TabIndex = 3;
             this.numWCheck.Value = new decimal(new int[] {
             5,
             0,
@@ -1107,7 +1107,7 @@
             this.linkLabel6.Location = new System.Drawing.Point(53, 231);
             this.linkLabel6.Name = "linkLabel6";
             this.linkLabel6.Size = new System.Drawing.Size(153, 21);
-            this.linkLabel6.TabIndex = 27;
+            this.linkLabel6.TabIndex = 6;
             this.linkLabel6.TabStop = true;
             this.linkLabel6.Text = "Uses the Flickr.Net library";
             this.linkLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1122,7 +1122,7 @@
             this.linkLabel8.Location = new System.Drawing.Point(224, 198);
             this.linkLabel8.Name = "linkLabel8";
             this.linkLabel8.Size = new System.Drawing.Size(187, 84);
-            this.linkLabel8.TabIndex = 26;
+            this.linkLabel8.TabIndex = 4;
             this.linkLabel8.TabStop = true;
             this.linkLabel8.Text = "Send any comments, requests, or bug reports to winterstark@gmail.com\r\nThanks!";
             this.linkLabel8.UseCompatibleTextRendering = true;
@@ -1144,7 +1144,7 @@
             this.linkLabel5.Location = new System.Drawing.Point(-16, 294);
             this.linkLabel5.Name = "linkLabel5";
             this.linkLabel5.Size = new System.Drawing.Size(222, 23);
-            this.linkLabel5.TabIndex = 20;
+            this.linkLabel5.TabIndex = 8;
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "Weather and moon icons by VClouds";
             this.linkLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1158,7 +1158,7 @@
             this.linkLabel4.Location = new System.Drawing.Point(6, 179);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(200, 52);
-            this.linkLabel4.TabIndex = 21;
+            this.linkLabel4.TabIndex = 5;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "This product uses the Flickr API but is not endorsed or certified by Flickr.";
             this.linkLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1172,7 +1172,7 @@
             this.linkLabel3.Location = new System.Drawing.Point(6, 252);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(200, 42);
-            this.linkLabel3.TabIndex = 22;
+            this.linkLabel3.TabIndex = 7;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "Wallcreeper icon original image from Wikimedia Commons";
             this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1187,7 +1187,7 @@
             this.linkLabel2.Location = new System.Drawing.Point(224, 165);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(187, 25);
-            this.linkLabel2.TabIndex = 23;
+            this.linkLabel2.TabIndex = 3;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Developed by Winterstark";
             this.linkLabel2.UseCompatibleTextRendering = true;
@@ -1200,7 +1200,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(225, 137);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(258, 19);
-            this.linkLabel1.TabIndex = 24;
+            this.linkLabel1.TabIndex = 2;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "github.com/Winterstark/Wallcreeper";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
