@@ -6,8 +6,6 @@ Krk
 5
 False
 
-1
-True
 False
 100
 0

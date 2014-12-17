@@ -94,10 +94,6 @@
             this.tabOptions = new System.Windows.Forms.TabPage();
             this.comboRefresh = new System.Windows.Forms.ComboBox();
             this.checkWinManager = new System.Windows.Forms.CheckBox();
-            this.checkShowChangelog = new System.Windows.Forms.CheckBox();
-            this.lblUpdateNotifications = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.trackUpdate = new System.Windows.Forms.TrackBar();
             this.lblWAStatus = new System.Windows.Forms.Label();
             this.checkRunAtStartup = new System.Windows.Forms.CheckBox();
             this.buttSaveOptions = new System.Windows.Forms.Button();
@@ -129,6 +125,7 @@
             this.picWIcon = new System.Windows.Forms.PictureBox();
             this.colorDiag = new System.Windows.Forms.ColorDialog();
             this.openDiag = new System.Windows.Forms.OpenFileDialog();
+            this.buttUpdateOptions = new System.Windows.Forms.Button();
             this.tabs.SuspendLayout();
             this.tabWallpapers.SuspendLayout();
             this.tabWallSources.SuspendLayout();
@@ -137,7 +134,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackLocal)).BeginInit();
             this.tabWinThemes.SuspendLayout();
             this.tabOptions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWCheck)).BeginInit();
             this.tabAbout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -815,12 +811,9 @@
             // 
             // tabOptions
             // 
+            this.tabOptions.Controls.Add(this.buttUpdateOptions);
             this.tabOptions.Controls.Add(this.comboRefresh);
             this.tabOptions.Controls.Add(this.checkWinManager);
-            this.tabOptions.Controls.Add(this.checkShowChangelog);
-            this.tabOptions.Controls.Add(this.lblUpdateNotifications);
-            this.tabOptions.Controls.Add(this.label21);
-            this.tabOptions.Controls.Add(this.trackUpdate);
             this.tabOptions.Controls.Add(this.lblWAStatus);
             this.tabOptions.Controls.Add(this.checkRunAtStartup);
             this.tabOptions.Controls.Add(this.buttSaveOptions);
@@ -883,45 +876,6 @@
             this.checkWinManager.UseVisualStyleBackColor = true;
             this.checkWinManager.CheckedChanged += new System.EventHandler(this.checkWinManager_CheckedChanged);
             // 
-            // checkShowChangelog
-            // 
-            this.checkShowChangelog.AutoSize = true;
-            this.checkShowChangelog.Location = new System.Drawing.Point(310, 221);
-            this.checkShowChangelog.Name = "checkShowChangelog";
-            this.checkShowChangelog.Size = new System.Drawing.Size(166, 17);
-            this.checkShowChangelog.TabIndex = 12;
-            this.checkShowChangelog.Text = "Show changelog after update";
-            this.checkShowChangelog.UseVisualStyleBackColor = true;
-            this.checkShowChangelog.CheckedChanged += new System.EventHandler(this.checkShowChangelog_CheckedChanged);
-            // 
-            // lblUpdateNotifications
-            // 
-            this.lblUpdateNotifications.AutoSize = true;
-            this.lblUpdateNotifications.Location = new System.Drawing.Point(310, 193);
-            this.lblUpdateNotifications.Name = "lblUpdateNotifications";
-            this.lblUpdateNotifications.Size = new System.Drawing.Size(60, 13);
-            this.lblUpdateNotifications.TabIndex = 65;
-            this.lblUpdateNotifications.Text = "Always ask";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(41, 193);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(104, 13);
-            this.label21.TabIndex = 64;
-            this.label21.Text = "Update notifications:";
-            // 
-            // trackUpdate
-            // 
-            this.trackUpdate.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.trackUpdate.Location = new System.Drawing.Point(151, 193);
-            this.trackUpdate.Maximum = 3;
-            this.trackUpdate.Name = "trackUpdate";
-            this.trackUpdate.Size = new System.Drawing.Size(153, 45);
-            this.trackUpdate.TabIndex = 11;
-            this.trackUpdate.Scroll += new System.EventHandler(this.trackUpdate_Scroll);
-            // 
             // lblWAStatus
             // 
             this.lblWAStatus.Location = new System.Drawing.Point(406, 128);
@@ -942,7 +896,7 @@
             // 
             // buttSaveOptions
             // 
-            this.buttSaveOptions.Location = new System.Drawing.Point(151, 254);
+            this.buttSaveOptions.Location = new System.Drawing.Point(151, 196);
             this.buttSaveOptions.Name = "buttSaveOptions";
             this.buttSaveOptions.Size = new System.Drawing.Size(249, 28);
             this.buttSaveOptions.TabIndex = 13;
@@ -1250,6 +1204,16 @@
             // 
             this.openDiag.Filter = "Wallcreeper pack|*.wcp|Unarchived pack info|*.txt";
             // 
+            // buttUpdateOptions
+            // 
+            this.buttUpdateOptions.Location = new System.Drawing.Point(151, 261);
+            this.buttUpdateOptions.Name = "buttUpdateOptions";
+            this.buttUpdateOptions.Size = new System.Drawing.Size(249, 28);
+            this.buttUpdateOptions.TabIndex = 63;
+            this.buttUpdateOptions.Text = "ShowUpdater Options";
+            this.buttUpdateOptions.UseVisualStyleBackColor = true;
+            this.buttUpdateOptions.Click += new System.EventHandler(this.buttUpdateOptions_Click);
+            // 
             // formMain
             // 
             this.AllowDrop = true;
@@ -1281,7 +1245,6 @@
             this.tabWinThemes.PerformLayout();
             this.tabOptions.ResumeLayout(false);
             this.tabOptions.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackUpdate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWCheck)).EndInit();
             this.tabAbout.ResumeLayout(false);
             this.tabAbout.PerformLayout();
@@ -1357,10 +1320,6 @@
         private System.Windows.Forms.OpenFileDialog openDiag;
         private System.Windows.Forms.CheckBox checkRunAtStartup;
         private System.Windows.Forms.Label lblWAStatus;
-        private System.Windows.Forms.CheckBox checkShowChangelog;
-        private System.Windows.Forms.Label lblUpdateNotifications;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TrackBar trackUpdate;
         private System.Windows.Forms.CheckBox checkWinManager;
         private System.Windows.Forms.ComboBox comboRefresh;
         private System.Windows.Forms.Label lblXPWinThemes;
@@ -1392,6 +1351,7 @@
         public System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.LinkLabel linkLabel6;
+        private System.Windows.Forms.Button buttUpdateOptions;
 
 
 

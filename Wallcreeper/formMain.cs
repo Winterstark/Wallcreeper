@@ -19,6 +19,7 @@ namespace Wallcreeper
     public partial class formMain : Form
     {
         const double VERSION = 1.0;
+        const string UPDATE_URL = "https://raw.githubusercontent.com/Winterstark/Wallcreeper/master/update/update.txt";
         
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         private static extern Int32 SystemParametersInfo(UInt32 action, UInt32 uParam, String vParam, UInt32 winIni);
@@ -48,6 +49,7 @@ namespace Wallcreeper
         const double MOON_PERIOD = 29.530588853;
 
         formAddWall addWall;
+        UpdateConfig updateConfig;
         BackgroundWorker worker;
         List<Theme> themes = new List<Theme>();
         List<WinTheme> winThemes = new List<WinTheme>();
@@ -61,8 +63,8 @@ namespace Wallcreeper
         string currLocation;
         string currWinThemeStyle, currWinThemeColor, currWinThemeSounds, currWinThemeSSaver, currWinThemeDate, appliedWallPath = "", onlineWallSource = "";
         double currLon, currLat;
-        int currTZone, currRefresh, currWCheckPeriod, currUpdateNotifs, currLocalFreq, currDropboxFreq, currFlickrFreq, currFlickrMinW, currFlickrMinH, oldWallsCount = -1;
-        bool weathClear = false, weathCloudy = false, weathRain = false, weathSnow = false, forcedWeather = false, newForcedWeather = false, loadingGlobalVals = true, currOverpower, currShowChangelog, currWinManager, firstRun, disableToggle = false;
+        int currTZone, currRefresh, currWCheckPeriod, currLocalFreq, currDropboxFreq, currFlickrFreq, currFlickrMinW, currFlickrMinH, oldWallsCount = -1;
+        bool weathClear = false, weathCloudy = false, weathRain = false, weathSnow = false, forcedWeather = false, newForcedWeather = false, loadingGlobalVals = true, currOverpower, currWinManager, firstRun, disableToggle = false;
 
 
         int utcTZone()
@@ -111,25 +113,6 @@ namespace Wallcreeper
                     return 24 * 60 * 60 * 1000;
                 default:
                     return 1 * 60 * 60 * 1000;
-            }
-        }
-
-        void refreshUpdateNotifLabel()
-        {
-            switch (trackUpdate.Value)
-            {
-                case 0:
-                    lblUpdateNotifications.Text = "Always ask";
-                    break;
-                case 1:
-                    lblUpdateNotifications.Text = "Check for update automatically";
-                    break;
-                case 2:
-                    lblUpdateNotifications.Text = "Download update automatically";
-                    break;
-                case 3:
-                    lblUpdateNotifications.Text = "Install update automatically";
-                    break;
             }
         }
 
@@ -336,8 +319,6 @@ namespace Wallcreeper
             double.TryParse(textLongitude.Text, out currLon);
             int.TryParse(textTimezone.Text, out currTZone);
 
-            currUpdateNotifs = trackUpdate.Value;
-            currShowChangelog = checkShowChangelog.Checked;
             currWinManager = checkWinManager.Checked;
 
             currLocalFreq = trackLocal.Value;
@@ -414,10 +395,6 @@ namespace Wallcreeper
             if (textLongitude.Text != currLon.ToString())
                 return true;
             if (textTimezone.Text.Replace("+", "") != currTZone.ToString())
-                return true;
-            if (trackUpdate.Value != currUpdateNotifs)
-                return true;
-            if (checkShowChangelog.Checked != currShowChangelog)
                 return true;
             if (checkWinManager.Checked != currWinManager)
                 return true;
@@ -1367,8 +1344,6 @@ namespace Wallcreeper
                 numWCheck.Value = int.Parse(file.ReadLine());
                 firstRun = bool.Parse(file.ReadLine());
                 Archiver = file.ReadLine();
-                trackUpdate.Value = int.Parse(file.ReadLine());
-                checkShowChangelog.Checked = bool.Parse(file.ReadLine());
                 checkWinManager.Checked = bool.Parse(file.ReadLine());
                 trackLocal.Value = int.Parse(file.ReadLine());
                 trackDropbox.Value = int.Parse(file.ReadLine());
@@ -1382,7 +1357,6 @@ namespace Wallcreeper
                 MessageBox.Show("Corrupted options file!");
             }
 
-            refreshUpdateNotifLabel();
             noteCurrGlobalVals();
             checkSourcesForDisables();
 
@@ -1407,8 +1381,6 @@ namespace Wallcreeper
             file.WriteLine(numWCheck.Value);
             file.WriteLine(firstRun);
             file.WriteLine(Archiver);
-            file.WriteLine(trackUpdate.Value);
-            file.WriteLine(checkShowChangelog.Checked);
             file.WriteLine(checkWinManager.Checked);
 
             file.WriteLine(trackLocal.Value);
@@ -2058,11 +2030,7 @@ namespace Wallcreeper
             worker.RunWorkerAsync();
 
             //update check
-            bool[] askPermissions = new bool[3] { true, true, true };
-            for (int i = 0; i < currUpdateNotifs; i++)
-                askPermissions[i] = false;
-
-            Updater.Update(VERSION, "https://raw2.github.com/Winterstark/Wallcreeper/master/update/update.txt", askPermissions, currShowChangelog);
+            Updater.Update(VERSION, UPDATE_URL);
 
             //first run
             if (firstRun)
@@ -2723,13 +2691,12 @@ namespace Wallcreeper
 
         private void trackUpdate_Scroll(object sender, EventArgs e)
         {
-            refreshUpdateNotifLabel();
-            checkIfGlobalValsChanged();
+
         }
 
         private void checkShowChangelog_CheckedChanged(object sender, EventArgs e)
         {
-            checkIfGlobalValsChanged();
+            
         }
 
         private void comboRefresh_SelectedIndexChanged(object sender, EventArgs e)
@@ -2821,6 +2788,17 @@ namespace Wallcreeper
         private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("http://flickrnet.codeplex.com/");
+        }
+
+        private void buttUpdateOptions_Click(object sender, EventArgs e)
+        {
+            if (updateConfig == null || updateConfig.IsDisposed)
+            {
+                updateConfig = new UpdateConfig();
+                updateConfig.CurrentVersion = VERSION;
+                updateConfig.DefaultUpdateURL = UPDATE_URL;
+                updateConfig.Show();
+            }
         }
     }
 }
