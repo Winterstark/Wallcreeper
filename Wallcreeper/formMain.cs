@@ -56,6 +56,7 @@ namespace Wallcreeper
         List<string> bannedWalls;
         Random rand;
         ContextMenu trayMenu;
+        MenuItem[] weatherMenu;
         DateTime sunrise, sunset, moonrise, moonset, nextFullMoon, nextEaster, prevWeatherCheck = new DateTime(2012, 1, 24), lastWallChange = new DateTime();
         string[] descClear, descCloudy, descRain, descSnow, win7Colors;
         public string Archiver;
@@ -64,7 +65,7 @@ namespace Wallcreeper
         string currWinThemeStyle, currWinThemeColor, currWinThemeSounds, currWinThemeSSaver, currWinThemeDate, appliedWallPath = "", onlineWallSource = "";
         double currLon, currLat;
         int currTZone, currRefresh, currWCheckPeriod, currLocalFreq, currDropboxFreq, currFlickrFreq, currFlickrMinW, currFlickrMinH, oldWallsCount = -1;
-        bool weathClear = false, weathCloudy = false, weathRain = false, weathSnow = false, forcedWeather = false, newForcedWeather = false, loadingGlobalVals = true, currOverpower, currWinManager, firstRun, disableToggle = false;
+        bool weathClear = false, weathCloudy = false, weathRain = false, weathSnow = false, forcedWeather = false, loadingGlobalVals = true, currOverpower, currWinManager, firstRun, disableToggle = false;
 
 
         int utcTZone()
@@ -125,7 +126,7 @@ namespace Wallcreeper
 
             RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
-            if (!trayMenu.MenuItems[8].Checked)
+            if (!trayMenu.MenuItems[9].Checked)
             {
                 rkApp.SetValue("Wallcreeper", Application.ExecutablePath.ToString());
                 MessageBox.Show("Wallcreeper now runs at Windows startup.");
@@ -136,8 +137,8 @@ namespace Wallcreeper
                 MessageBox.Show("Wallcreeper no longer runs at Windows startup.");
             }
 
-            trayMenu.MenuItems[8].Checked = !trayMenu.MenuItems[8].Checked;
-            checkRunAtStartup.Checked = trayMenu.MenuItems[8].Checked;
+            trayMenu.MenuItems[9].Checked = !trayMenu.MenuItems[9].Checked;
+            checkRunAtStartup.Checked = trayMenu.MenuItems[9].Checked;
 
             disableToggle = false;
         }
@@ -1026,9 +1027,154 @@ namespace Wallcreeper
 
             int lb = report.IndexOf("<dd class=\"conditions\">") + 23;
             int ub = report.IndexOf('<', lb);
+            string weather = report.Substring(lb, ub - lb).ToLower();
 
-            setWeatherFlags(report.Substring(lb, ub - lb).ToLower());
-            setWeatherIcon();
+            if (descClear.Contains(weather))
+                weather = "clear";
+            else if (descCloudy.Contains(weather))
+                weather = "cloudy";
+            else if (descRain.Contains(weather))
+                weather = "rain";
+            else if (descSnow.Contains(weather))
+                weather = "snow";
+            else
+                MessageBox.Show("Unrecognized weather condition: [" + weather + "]");
+
+            setWeather(weather, false);
+        }
+
+        void setWeather(string weather, bool forced)
+        {
+            if (forcedWeather)
+            {
+                if (!forced)
+                {
+                    //if the user previously forced custom weather, and now the weather service reports the same weather, it is no longer "forced"
+                    string prevWeather = "";
+                    if (weathClear)
+                        prevWeather = "clear";
+                    else if (weathRain)
+                        prevWeather = "rain";
+                    else if (weathSnow)
+                        prevWeather = "snow";
+                    else
+                        prevWeather = "cloudy";
+
+                    if (weather == prevWeather)
+                        resetWeather();
+
+                    return;
+                }
+            }
+
+            setWeatherFlags(weather, forced); //set weather bool flags
+            setWeatherIcon(); //set icon based on the flags
+
+            //set tray items' Checked values
+            foreach (var menuItem in weatherMenu)
+                menuItem.Checked = menuItem.Text.ToLower() == weather.ToLower();
+
+            //change weather icon's background color if the weather is forced
+            if (forced)
+            {
+                forcedWeather = true;
+                picWIcon.BackColor = isDay(0) ? Color.White : Color.Black;
+            }
+        }
+
+        void setWeatherFlags(string weather, bool forced)
+        {
+            weathClear = false;
+            weathCloudy = false;
+            weathRain = false;
+            weathSnow = false;
+
+            switch (weather)
+            {
+                case "clear":
+                    weathClear = true;
+                    break;
+                case "cloudy":
+                    weathCloudy = true;
+                    break;
+                case "rain":
+                    weathCloudy = true;
+                    weathRain = true;
+                    break;
+                case "snow":
+                    weathCloudy = true;
+                    weathSnow = true;
+                    break;
+            }
+        }
+
+        void setWeatherIcon()
+        {
+            if (isDay(0))
+            {
+                if (weathClear)
+                    picWIcon.ImageLocation = Application.StartupPath + "\\weather icons\\day - clear.png";
+                else if (weathRain)
+                    picWIcon.ImageLocation = Application.StartupPath + "\\weather icons\\day - rain.png";
+                else if (weathSnow)
+                    picWIcon.ImageLocation = Application.StartupPath + "\\weather icons\\day - snow.png";
+                else
+                    picWIcon.ImageLocation = Application.StartupPath + "\\weather icons\\day - cloudy.png";
+            }
+            else
+            {
+                if (weathRain)
+                    picWIcon.ImageLocation = Application.StartupPath + "\\weather icons\\night - rain.png";
+                else if (weathSnow)
+                    picWIcon.ImageLocation = Application.StartupPath + "\\weather icons\\night - snow.png";
+                else
+                    picWIcon.ImageLocation = moonPhase;
+            }
+
+            saveWeatherStatus();
+        }
+
+        void saveWeatherStatus()
+        {
+            int lb = picWIcon.ImageLocation.LastIndexOf('\\') + 1;
+            int ub = picWIcon.ImageLocation.LastIndexOf('.');
+            string wIconFilename = picWIcon.ImageLocation.Substring(lb, ub - lb);
+
+            int wStatus;
+            if (!int.TryParse(wIconFilename, out wStatus))
+                switch (wIconFilename)
+                {
+                    case "day - clear":
+                        wStatus = 8;
+                        break;
+                    case "day - cloudy":
+                        wStatus = 9;
+                        break;
+                    case "day - rain":
+                        wStatus = 10;
+                        break;
+                    case "day - snow":
+                        wStatus = 11;
+                        break;
+                    case "night - rain":
+                        wStatus = 12;
+                        break;
+                    case "night - snow":
+                        wStatus = 13;
+                        break;
+                }
+
+            StreamWriter file = new StreamWriter(Application.StartupPath + "\\weather_status.txt");
+            file.WriteLine(wStatus);
+            file.Close();
+        }
+
+        void resetWeather()
+        {
+            picWIcon.BackColor = Color.FromKnownColor(KnownColor.Control);
+            this.Refresh();
+
+            forcedWeather = false;
         }
 
         double sin(double degs)
@@ -1392,145 +1538,6 @@ namespace Wallcreeper
             file.Close();
 
             noteCurrGlobalVals();
-        }
-
-        void setWeatherFlags(string weather)
-        {
-            if (descClear.Contains(weather))
-            {
-                if (forcedWeather && !newForcedWeather)
-                {
-                    if (weathClear && !weathCloudy && !weathRain && !weathSnow)
-                    {
-                        forcedWeather = false;
-                        picWIcon.BackColor = Color.FromKnownColor(KnownColor.Control);
-                    }
-
-                    return;
-                }
-
-                weathClear = true;
-                weathCloudy = false;
-                weathRain = false;
-                weathSnow = false;
-            }
-            else if (descCloudy.Contains(weather))
-            {
-                if (forcedWeather && !newForcedWeather)
-                {
-                    if (!weathClear && weathCloudy && !weathRain && !weathSnow)
-                    {
-                        forcedWeather = false;
-                        picWIcon.BackColor = Color.FromKnownColor(KnownColor.Control);
-                    }
-
-                    return;
-                }
-
-                weathClear = false;
-                weathCloudy = true;
-                weathRain = false;
-                weathSnow = false;
-            }
-            else if (descRain.Contains(weather))
-            {
-                if (forcedWeather && !newForcedWeather)
-                {
-                    if (!weathClear && weathCloudy && weathRain && !weathSnow)
-                    {
-                        forcedWeather = false;
-                        picWIcon.BackColor = Color.FromKnownColor(KnownColor.Control);
-                    }
-
-                    return;
-                }
-
-                weathClear = false;
-                weathCloudy = true;
-                weathRain = true;
-                weathSnow = false;
-            }
-            else if (descSnow.Contains(weather))
-            {
-                if (forcedWeather && !newForcedWeather)
-                {
-                    if (!weathClear && weathCloudy && !weathRain && weathSnow)
-                    {
-                        forcedWeather = false;
-                        picWIcon.BackColor = Color.FromKnownColor(KnownColor.Control);
-                    }
-
-                    return;
-                }
-
-                weathClear = false;
-                weathCloudy = true;
-                weathRain = false;
-                weathSnow = true;
-            }
-            else if (weather != "" && weather != "lass=\"\">")
-                MessageBox.Show("Unrecognized weather condition: [" + weather + "]");
-        }
-
-        void setWeatherIcon()
-        {
-            if (isDay(0))
-            {
-                if (weathClear)
-                    picWIcon.ImageLocation = Application.StartupPath + "\\weather icons\\day - clear.png";
-                else if (weathRain)
-                    picWIcon.ImageLocation = Application.StartupPath + "\\weather icons\\day - rain.png";
-                else if (weathSnow)
-                    picWIcon.ImageLocation = Application.StartupPath + "\\weather icons\\day - snow.png";
-                else 
-                    picWIcon.ImageLocation = Application.StartupPath + "\\weather icons\\day - cloudy.png";
-            }
-            else
-            {
-                if (weathRain)
-                    picWIcon.ImageLocation = Application.StartupPath + "\\weather icons\\night - rain.png";
-                else if (weathSnow)
-                    picWIcon.ImageLocation = Application.StartupPath + "\\weather icons\\night - snow.png";
-                else
-                    picWIcon.ImageLocation = moonPhase;
-            }
-
-            saveWeatherStatus();
-        }
-
-        void saveWeatherStatus()
-        {
-            int lb = picWIcon.ImageLocation.LastIndexOf('\\') + 1;
-            int ub = picWIcon.ImageLocation.LastIndexOf('.');
-            string wIconFilename = picWIcon.ImageLocation.Substring(lb, ub - lb);
-
-            int wStatus;
-            if (!int.TryParse(wIconFilename, out wStatus))
-                switch (wIconFilename)
-                {
-                    case "day - clear":
-                        wStatus = 8;
-                        break;
-                    case "day - cloudy":
-                        wStatus = 9;
-                        break;
-                    case "day - rain":
-                        wStatus = 10;
-                        break;
-                    case "day - snow":
-                        wStatus = 11;
-                        break;
-                    case "night - rain":
-                        wStatus = 12;
-                        break;
-                    case "night - snow":
-                        wStatus = 13;
-                        break;
-                }
-
-            StreamWriter file = new StreamWriter(Application.StartupPath + "\\weather_status.txt");
-            file.WriteLine(wStatus);
-            file.Close();
         }
 
         bool winThemeNameTaken(string name)
@@ -1989,16 +1996,24 @@ namespace Wallcreeper
                 trayMenu = new ContextMenu();
 
                 trayMenu.MenuItems.Add(0, new MenuItem("Change wallpaper", new System.EventHandler(Tray_ChangeWall_Click)));
-                trayMenu.MenuItems.Add(1, new MenuItem("-"));
-                trayMenu.MenuItems.Add(2, new MenuItem("Locate current wallpaper", new System.EventHandler(Tray_LocCurrWall_Click)));
-                trayMenu.MenuItems.Add(3, new MenuItem("Open wallpaper webpage", new System.EventHandler(Tray_OpenWallWebPage_Click)));
-                trayMenu.MenuItems.Add(4, new MenuItem("Save wallpaper to local theme", new System.EventHandler(Tray_SaveWall_Click)));
-                trayMenu.MenuItems.Add(5, new MenuItem("Ban wallpaper", new System.EventHandler(Tray_BanWall_Click)));
-                trayMenu.MenuItems.Add(6, new MenuItem("-"));
-                trayMenu.MenuItems.Add(7, new MenuItem("Options", new System.EventHandler(Tray_Options_Click)));
-                trayMenu.MenuItems.Add(8, new MenuItem("Run at startup", new System.EventHandler(Tray_RunAtStartup_Click)));
-                trayMenu.MenuItems.Add(9, new MenuItem("-"));
-                trayMenu.MenuItems.Add(10, new MenuItem("Exit", new System.EventHandler(Tray_Exit_Click)));
+
+                weatherMenu = new MenuItem[4];
+                weatherMenu[0] = new MenuItem("Clear", new System.EventHandler(Tray_SetWeather_Clear));
+                weatherMenu[1] = new MenuItem("Cloudy", new System.EventHandler(Tray_SetWeather_Cloudy));
+                weatherMenu[2] = new MenuItem("Rain", new System.EventHandler(Tray_SetWeather_Rain));
+                weatherMenu[3] = new MenuItem("Snow", new System.EventHandler(Tray_SetWeather_Snow));
+                trayMenu.MenuItems.Add(1, new MenuItem("Set current weather...", weatherMenu));
+                
+                trayMenu.MenuItems.Add(2, new MenuItem("-"));
+                trayMenu.MenuItems.Add(3, new MenuItem("Locate current wallpaper", new System.EventHandler(Tray_LocCurrWall_Click)));
+                trayMenu.MenuItems.Add(4, new MenuItem("Open wallpaper webpage", new System.EventHandler(Tray_OpenWallWebPage_Click)));
+                trayMenu.MenuItems.Add(5, new MenuItem("Save wallpaper to local theme", new System.EventHandler(Tray_SaveWall_Click)));
+                trayMenu.MenuItems.Add(6, new MenuItem("Ban wallpaper", new System.EventHandler(Tray_BanWall_Click)));
+                trayMenu.MenuItems.Add(7, new MenuItem("-"));
+                trayMenu.MenuItems.Add(8, new MenuItem("Options", new System.EventHandler(Tray_Options_Click)));
+                trayMenu.MenuItems.Add(9, new MenuItem("Run at startup", new System.EventHandler(Tray_RunAtStartup_Click)));
+                trayMenu.MenuItems.Add(10, new MenuItem("-"));
+                trayMenu.MenuItems.Add(11, new MenuItem("Exit", new System.EventHandler(Tray_Exit_Click)));
 
                 trayIcon.ContextMenu = trayMenu;
             }
@@ -2009,7 +2024,7 @@ namespace Wallcreeper
             RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
             if (rkApp.GetValue("Wallcreeper") != null)
             {
-                trayMenu.MenuItems[8].Checked = true;
+                trayMenu.MenuItems[9].Checked = true;
                 checkRunAtStartup.Checked = true;
             }
 
@@ -2203,8 +2218,26 @@ namespace Wallcreeper
         private void Tray_ChangeWall_Click(object sender, EventArgs e)
         {
             lastWallChange = DateTime.Now.AddDays(-2);
-            //if (currWinManager)
-            //    MessageBox.Show("If the wallpaper doesn't change that means you are currently using Windows's built-in wallpaper manager and local wallpaper sources." + Environment.NewLine + "Right-click on the Desktop and select \"Next desktop background\".");
+        }
+
+        private void Tray_SetWeather_Clear(object sender, EventArgs e)
+        {
+            setWeather("clear", true);
+        }
+
+        private void Tray_SetWeather_Cloudy(object sender, EventArgs e)
+        {
+            setWeather("cloudy", true);
+        }
+
+        private void Tray_SetWeather_Rain(object sender, EventArgs e)
+        {
+            setWeather("rain", true);
+        }
+
+        private void Tray_SetWeather_Snow(object sender, EventArgs e)
+        {
+            setWeather("snow", true);
         }
 
         private void Tray_Options_Click(object sender, EventArgs e)
@@ -2404,47 +2437,31 @@ namespace Wallcreeper
 
         private void picWIcon_Click(object sender, EventArgs e)
         {
-            List<string> possibleIcons = new List<string>();
-
             if (isDay(0))
             {
-                possibleIcons.Add(Application.StartupPath + "\\weather icons\\day - clear.png");
-                possibleIcons.Add(Application.StartupPath + "\\weather icons\\day - cloudy.png");
-                possibleIcons.Add(Application.StartupPath + "\\weather icons\\day - rain.png");
-
-                //if (season == "Winter")
-                possibleIcons.Add(Application.StartupPath + "\\weather icons\\day - snow.png");
+                if (picWIcon.ImageLocation.Contains("clear"))
+                    setWeather("cloudy", true);
+                else if (picWIcon.ImageLocation.Contains("cloudy"))
+                    setWeather("rain", true);
+                else if (picWIcon.ImageLocation.Contains("rain"))
+                    setWeather("snow", true);
+                else //if snow
+                    setWeather("clear", true);
             }
             else
             {
-                possibleIcons.Add(moonPhase);
-                possibleIcons.Add(Application.StartupPath + "\\weather icons\\night - rain.png");
-
-                //if (season == "Winter")
-                possibleIcons.Add(Application.StartupPath + "\\weather icons\\night - snow.png");
+                if (picWIcon.ImageLocation.Contains("rain"))
+                    setWeather("snow", true);
+                else if (picWIcon.ImageLocation.Contains("snow"))
+                    setWeather("clear", true);
+                else //if moon phase (clear)
+                    setWeather("rain", true);
             }
-
-            picWIcon.ImageLocation = possibleIcons[(possibleIcons.IndexOf(picWIcon.ImageLocation) + 1) % possibleIcons.Count];
-
-            string flag = "";
-            if (picWIcon.ImageLocation.Contains("phase"))
-                flag = "clear";
-            else
-                flag = picWIcon.ImageLocation.Substring(picWIcon.ImageLocation.LastIndexOf(" - ") + 3, picWIcon.ImageLocation.Length - 4 - picWIcon.ImageLocation.LastIndexOf(" - ") - 3);
-
-            newForcedWeather = true;
-            setWeatherFlags(flag);
-            saveWeatherStatus();
-            newForcedWeather = false;
-            forcedWeather = true;
         }
 
         private void picWIcon_DoubleClick(object sender, EventArgs e)
         {
-            picWIcon.BackColor = Color.FromKnownColor(KnownColor.Control);
-            this.Refresh();
-
-            forcedWeather = false;
+            resetWeather();
             checkWeather();
         }
 
