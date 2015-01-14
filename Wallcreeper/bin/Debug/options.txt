@@ -6,9 +6,9 @@ Krk
 5
 False
 
-True
-100
+False
 0
+100
 0
 1600
 900

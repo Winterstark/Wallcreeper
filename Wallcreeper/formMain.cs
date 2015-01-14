@@ -44,7 +44,7 @@ namespace Wallcreeper
             }
         }
 
-        enum WallpaperSource { Local, Dropbox, Flickr };
+        enum WallpaperSource { Local, Imgur, Flickr };
 
         const double MOON_PERIOD = 29.530588853;
 
@@ -54,6 +54,7 @@ namespace Wallcreeper
         List<Theme> themes = new List<Theme>();
         List<WinTheme> winThemes = new List<WinTheme>();
         List<string> bannedWalls;
+        Imgur imgur;
         Random rand;
         ContextMenu trayMenu;
         MenuItem[] weatherMenu;
@@ -64,7 +65,7 @@ namespace Wallcreeper
         string currLocation;
         string currWinThemeStyle, currWinThemeColor, currWinThemeSounds, currWinThemeSSaver, currWinThemeDate, appliedWallPath = "", onlineWallSource = "";
         double currLon, currLat;
-        int currTZone, currRefresh, currWCheckPeriod, currLocalFreq, currDropboxFreq, currFlickrFreq, currFlickrMinW, currFlickrMinH, oldWallsCount = -1;
+        int currTZone, currRefresh, currWCheckPeriod, currLocalFreq, currImgurFreq, currFlickrFreq, currFlickrMinW, currFlickrMinH, oldWallsCount = -1;
         bool weathClear = false, weathCloudy = false, weathRain = false, weathSnow = false, forcedWeather = false, loadingGlobalVals = true, currOverpower, currWinManager, firstRun, disableToggle = false;
 
 
@@ -323,7 +324,7 @@ namespace Wallcreeper
             currWinManager = checkWinManager.Checked;
 
             currLocalFreq = trackLocal.Value;
-            currDropboxFreq = trackDropbox.Value;
+            currImgurFreq = trackImgur.Value;
             currFlickrFreq = trackFlickr.Value;
             currFlickrMinW = int.Parse(textFlickrMinW.Text);
             currFlickrMinH = int.Parse(textFlickrMinH.Text);
@@ -401,7 +402,7 @@ namespace Wallcreeper
                 return true;
             if (trackLocal.Value != currLocalFreq)
                 return true;
-            if (trackDropbox.Value != currDropboxFreq)
+            if (trackImgur.Value != currImgurFreq)
                 return true;
             if (trackFlickr.Value != currFlickrFreq)
                 return true;
@@ -1492,7 +1493,7 @@ namespace Wallcreeper
                 Archiver = file.ReadLine();
                 checkWinManager.Checked = bool.Parse(file.ReadLine());
                 trackLocal.Value = int.Parse(file.ReadLine());
-                trackDropbox.Value = int.Parse(file.ReadLine());
+                trackImgur.Value = int.Parse(file.ReadLine());
                 trackFlickr.Value = int.Parse(file.ReadLine());
                 textFlickrMinW.Text = file.ReadLine();
                 textFlickrMinH.Text = file.ReadLine();
@@ -1530,7 +1531,7 @@ namespace Wallcreeper
             file.WriteLine(checkWinManager.Checked);
 
             file.WriteLine(trackLocal.Value);
-            file.WriteLine(trackDropbox.Value);
+            file.WriteLine(trackImgur.Value);
             file.WriteLine(trackFlickr.Value);
             file.WriteLine(textFlickrMinW.Text);
             file.WriteLine(textFlickrMinH.Text);
@@ -1603,7 +1604,7 @@ namespace Wallcreeper
 
             //list new walls
             List<string> newWalls = new List<string>();
-            List<string> dropboxThemes = new List<string>();
+            List<string> imgurThemes = new List<string>();
             string activeThemes = "";
 
             bool overpoweredTheme = false;
@@ -1620,23 +1621,23 @@ namespace Wallcreeper
                     newWalls.AddRange(Directory.GetFiles(theme.wallDir));
                     activeThemes += theme.name + ", ";
 
-                    //add to dropbox themes (themes used to look for wallpaper themes on dropbox (AND flickr))
+                    //add to Imgur themes (themes used to look for wallpaper themes on Imgur (AND flickr))
                     //accept only general themes (themes using terms like Autumn or Day) and holiday themes
                     if (theme.name == "Coffee Break" || theme.name == "Full Moon" || theme.name.Contains("Holidays"))
-                        dropboxThemes.Add(theme.name);
+                        imgurThemes.Add(theme.name);
                     else if ((theme.date == "Any date" || theme.date == "Spring" || theme.date == "Summer" || theme.date == "Autumn" || theme.date == "Winter")
                         && (theme.time == "Any time" || theme.time == "Day" || theme.time == "Twilight" || theme.time == "Night"))
                     {
-                        string dropboxTheme = "";
+                        string imgurTheme = "";
 
                         if (theme.date != "Any date")
-                            dropboxTheme = theme.date;
+                            imgurTheme = theme.date;
                         if (theme.time != "Any time")
-                            dropboxTheme += (dropboxTheme != "" ? " - " : "") + theme.time;
+                            imgurTheme += (imgurTheme != "" ? " - " : "") + theme.time;
                         if (theme.weather != "Any weather")
-                            dropboxTheme += (dropboxTheme != "" ? " - " : "") + theme.weather;
+                            imgurTheme += (imgurTheme != "" ? " - " : "") + theme.weather;
 
-                        dropboxThemes.Add(dropboxTheme);
+                        imgurThemes.Add(imgurTheme);
                     }
                 }
 
@@ -1698,9 +1699,9 @@ namespace Wallcreeper
                             foreach (string newWall in newWalls)
                                 File.Copy(newWall, mainWallDir + "\\" + getOutputFName(newWall));
                             break;
-                        case WallpaperSource.Dropbox:
+                        case WallpaperSource.Imgur:
                             //dl new wall
-                            appliedWallPath = Dropbox.GetWallpaper(pickRandomTheme(dropboxThemes), createSubdir("temp dl", true), out onlineWallSource, bannedWalls);
+                            appliedWallPath = imgur.GetWallpaper(pickRandomTheme(imgurThemes), createSubdir("temp dl", true), out onlineWallSource, bannedWalls);
 
                             //delete all current wallpapers
                             mainWallDir = createSubdir("walls_current", true);
@@ -1710,7 +1711,7 @@ namespace Wallcreeper
                             break;
                         case WallpaperSource.Flickr:
                             //dl new wall
-                            appliedWallPath = FlickrSource.GetWallpaper(pickRandomTheme(dropboxThemes), currFlickrMinW, currFlickrMinH, createSubdir("temp dl", true), out onlineWallSource, bannedWalls, banWallpaper);
+                            appliedWallPath = FlickrSource.GetWallpaper(pickRandomTheme(imgurThemes), currFlickrMinW, currFlickrMinH, createSubdir("temp dl", true), out onlineWallSource, bannedWalls, banWallpaper);
 
                             //delete all current wallpapers
                             mainWallDir = createSubdir("walls_current", true);
@@ -1726,16 +1727,16 @@ namespace Wallcreeper
                             if (newWalls.Count > 0)
                                 applyWallpaper(newWalls[rand.Next(newWalls.Count)]);
                             break;
-                        case WallpaperSource.Dropbox:
-                            string dropboxPath = Dropbox.GetWallpaper(pickRandomTheme(dropboxThemes), createSubdir("temp dl", true), out onlineWallSource, bannedWalls);
+                        case WallpaperSource.Imgur:
+                            string imgurPath = imgur.GetWallpaper(pickRandomTheme(imgurThemes), createSubdir("temp dl", true), out onlineWallSource, bannedWalls);
 
-                            if (dropboxPath != "")
-                                applyWallpaper(dropboxPath);
+                            if (imgurPath != "")
+                                applyWallpaper(imgurPath);
                             else
-                                MessageBox.Show("Error while downloading wallpaper from online repository (Dropbox).");
+                                MessageBox.Show("Error while downloading wallpaper from Imgur.");
                             break;
                         case WallpaperSource.Flickr:
-                            string flickrPath = FlickrSource.GetWallpaper(pickRandomTheme(dropboxThemes), currFlickrMinW, currFlickrMinH, createSubdir("temp dl", true), out onlineWallSource, bannedWalls, banWallpaper);
+                            string flickrPath = FlickrSource.GetWallpaper(pickRandomTheme(imgurThemes), currFlickrMinW, currFlickrMinH, createSubdir("temp dl", true), out onlineWallSource, bannedWalls, banWallpaper);
 
                             if (flickrPath != "")
                                 applyWallpaper(flickrPath);
@@ -1758,7 +1759,7 @@ namespace Wallcreeper
         void checkSourcesForDisables()
         {
             lblLocalDisabled.Visible = trackLocal.Value == 0;
-            lblDropboxDisabled.Visible = trackDropbox.Value == 0;
+            lblImgurDisabled.Visible = trackImgur.Value == 0;
             lblFlickrDisabled.Visible = trackFlickr.Value == 0;
         }
 
@@ -1859,8 +1860,8 @@ namespace Wallcreeper
 
             if (randomPick < currLocalFreq)
                 return WallpaperSource.Local;
-            else if (randomPick < currLocalFreq + currDropboxFreq)
-                return WallpaperSource.Dropbox;
+            else if (randomPick < currLocalFreq + currImgurFreq)
+                return WallpaperSource.Imgur;
             else
                 return WallpaperSource.Flickr;
         }
@@ -2029,6 +2030,9 @@ namespace Wallcreeper
             }
 
             disableToggle = false;
+
+            //init Imgur
+            imgur = new Imgur(Application.StartupPath + "\\imgur albums.txt");
 
             //load logo
             string logoPath = Application.StartupPath + "\\wallcreeper.jpg";
@@ -2729,18 +2733,18 @@ namespace Wallcreeper
         private void trackLocal_Scroll(object sender, EventArgs e)
         {
             //adjust the other two slides to ensure their sum is equal to 100
-            trackDropbox.Value = Math.Max(100 - trackLocal.Value - trackFlickr.Value, 0);
-            trackFlickr.Value = 100 - trackLocal.Value - trackDropbox.Value;
+            trackImgur.Value = Math.Max(100 - trackLocal.Value - trackFlickr.Value, 0);
+            trackFlickr.Value = 100 - trackLocal.Value - trackImgur.Value;
 
             checkSourcesForDisables();
             checkIfGlobalValsChanged();
         }
 
-        private void trackDropbox_Scroll(object sender, EventArgs e)
+        private void trackImgur_Scroll(object sender, EventArgs e)
         {
             //adjust the other two slides to ensure their sum is equal to 100
-            trackLocal.Value = Math.Max(100 - trackDropbox.Value - trackFlickr.Value, 0);
-            trackFlickr.Value = 100 - trackLocal.Value - trackDropbox.Value;
+            trackLocal.Value = Math.Max(100 - trackImgur.Value - trackFlickr.Value, 0);
+            trackFlickr.Value = 100 - trackLocal.Value - trackImgur.Value;
 
             checkSourcesForDisables();
             checkIfGlobalValsChanged();
@@ -2749,8 +2753,8 @@ namespace Wallcreeper
         private void trackFlickr_Scroll(object sender, EventArgs e)
         {
             //adjust the other two slides to ensure their sum is equal to 100
-            trackLocal.Value = Math.Max(100 - trackDropbox.Value - trackFlickr.Value, 0);
-            trackDropbox.Value = 100 - trackLocal.Value - trackFlickr.Value;
+            trackLocal.Value = Math.Max(100 - trackImgur.Value - trackFlickr.Value, 0);
+            trackImgur.Value = 100 - trackLocal.Value - trackFlickr.Value;
 
             checkSourcesForDisables();
             checkIfGlobalValsChanged();
@@ -2816,6 +2820,11 @@ namespace Wallcreeper
                 updateConfig.DefaultUpdateURL = UPDATE_URL;
                 updateConfig.Show();
             }
+        }
+
+        private void linkImgur_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://winterstark.imgur.com/");
         }
     }
 }

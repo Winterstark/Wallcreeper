@@ -1,0 +1,43 @@
+
+Spring -> PFtCh
+Spring - Day -> c5qPQ
+Spring - Day - Clear -> hGkff
+Spring - Day - Cloudy -> ofzH4
+Spring - Day - Rain -> YRH8a
+Spring - Twilight - Clear -> j0VHo
+Spring - Twilight - Cloudy -> LS3RU
+Spring - Night -> pvv3q
+Summer -> YnhDm
+Summer - Day -> XxQ1g
+Summer - Day - Clear -> LEuTV
+Summer - Day - Cloudy -> GUWhq
+Summer - Day - Rain -> OWWUA
+Summer - Twilight - Clear -> NIQ70
+Summer - Twilight - Cloudy -> 6IfbN
+Summer - Night -> N1omz
+Autumn -> rOOcD
+Autumn - Day -> S0OSq
+Autumn - Day - Clear -> V1Zvp
+Autumn - Day - Cloudy -> tCjx5
+Autumn - Day - Rain -> 35E1F
+Autumn - Twilight - Clear -> kGe0f
+Autumn - Twilight - Cloudy -> FAHnc
+Autumn - Night -> hinyA
+Winter -> lUsac
+Winter - Day -> Bevbw
+Winter - Day - Clear -> sPthI
+Winter - Day - Cloudy -> CPZnK
+Winter - Day - Rain -> F5AjA
+Winter - Twilight - Clear -> J7rxu
+Winter - Twilight - Cloudy -> tWbwC
+Winter - Night -> yVsg5
+Day - Snow -> TdiPa
+Night - Snow -> 2y5rr
+Night - Rain -> Rxvyl
+Full Moon -> 4ArIc
+Coffee Break -> np9Ue
+Holidays - Easter -> wGCSj
+Holidays - Halloween -> 4IwKa
+Holidays - Winter -> j9ZhG
+Holidays - Winter - Christmas -> cMcDc
+Holidays - Winter - New Year -> RmL9v

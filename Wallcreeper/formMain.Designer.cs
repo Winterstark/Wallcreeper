@@ -60,15 +60,14 @@
             this.textFlickrMinH = new System.Windows.Forms.TextBox();
             this.textFlickrMinW = new System.Windows.Forms.TextBox();
             this.trackFlickr = new System.Windows.Forms.TrackBar();
-            this.trackDropbox = new System.Windows.Forms.TrackBar();
+            this.trackImgur = new System.Windows.Forms.TrackBar();
             this.trackLocal = new System.Windows.Forms.TrackBar();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.lblFlickrDisabled = new System.Windows.Forms.Label();
-            this.lblDropboxDisabled = new System.Windows.Forms.Label();
+            this.lblImgurDisabled = new System.Windows.Forms.Label();
             this.lblLocalDisabled = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabWinThemes = new System.Windows.Forms.TabPage();
@@ -92,6 +91,7 @@
             this.comboWinTheme = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.tabOptions = new System.Windows.Forms.TabPage();
+            this.buttUpdateOptions = new System.Windows.Forms.Button();
             this.comboRefresh = new System.Windows.Forms.ComboBox();
             this.checkWinManager = new System.Windows.Forms.CheckBox();
             this.lblWAStatus = new System.Windows.Forms.Label();
@@ -125,12 +125,12 @@
             this.picWIcon = new System.Windows.Forms.PictureBox();
             this.colorDiag = new System.Windows.Forms.ColorDialog();
             this.openDiag = new System.Windows.Forms.OpenFileDialog();
-            this.buttUpdateOptions = new System.Windows.Forms.Button();
+            this.linkImgur = new System.Windows.Forms.LinkLabel();
             this.tabs.SuspendLayout();
             this.tabWallpapers.SuspendLayout();
             this.tabWallSources.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackFlickr)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackDropbox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackImgur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackLocal)).BeginInit();
             this.tabWinThemes.SuspendLayout();
             this.tabOptions.SuspendLayout();
@@ -417,19 +417,19 @@
             // 
             // tabWallSources
             // 
+            this.tabWallSources.Controls.Add(this.linkImgur);
             this.tabWallSources.Controls.Add(this.buttWallSourcesSaveChanges);
             this.tabWallSources.Controls.Add(this.textFlickrMinH);
             this.tabWallSources.Controls.Add(this.textFlickrMinW);
             this.tabWallSources.Controls.Add(this.trackFlickr);
-            this.tabWallSources.Controls.Add(this.trackDropbox);
+            this.tabWallSources.Controls.Add(this.trackImgur);
             this.tabWallSources.Controls.Add(this.trackLocal);
             this.tabWallSources.Controls.Add(this.label25);
             this.tabWallSources.Controls.Add(this.label24);
             this.tabWallSources.Controls.Add(this.label22);
-            this.tabWallSources.Controls.Add(this.label12);
             this.tabWallSources.Controls.Add(this.label23);
             this.tabWallSources.Controls.Add(this.lblFlickrDisabled);
-            this.tabWallSources.Controls.Add(this.lblDropboxDisabled);
+            this.tabWallSources.Controls.Add(this.lblImgurDisabled);
             this.tabWallSources.Controls.Add(this.lblLocalDisabled);
             this.tabWallSources.Controls.Add(this.label5);
             this.tabWallSources.Location = new System.Drawing.Point(4, 22);
@@ -478,16 +478,16 @@
             this.trackFlickr.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackFlickr.Scroll += new System.EventHandler(this.trackFlickr_Scroll);
             // 
-            // trackDropbox
+            // trackImgur
             // 
-            this.trackDropbox.BackColor = System.Drawing.Color.White;
-            this.trackDropbox.Location = new System.Drawing.Point(176, 98);
-            this.trackDropbox.Maximum = 100;
-            this.trackDropbox.Name = "trackDropbox";
-            this.trackDropbox.Size = new System.Drawing.Size(222, 45);
-            this.trackDropbox.TabIndex = 3;
-            this.trackDropbox.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackDropbox.Scroll += new System.EventHandler(this.trackDropbox_Scroll);
+            this.trackImgur.BackColor = System.Drawing.Color.White;
+            this.trackImgur.Location = new System.Drawing.Point(176, 98);
+            this.trackImgur.Maximum = 100;
+            this.trackImgur.Name = "trackImgur";
+            this.trackImgur.Size = new System.Drawing.Size(222, 45);
+            this.trackImgur.TabIndex = 3;
+            this.trackImgur.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackImgur.Scroll += new System.EventHandler(this.trackImgur_Scroll);
             // 
             // trackLocal
             // 
@@ -528,15 +528,6 @@
             this.label22.TabIndex = 0;
             this.label22.Text = "Flickr:";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(33, 98);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(137, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Organized online repository:";
-            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -556,15 +547,15 @@
             this.lblFlickrDisabled.Text = "DISABLED";
             this.lblFlickrDisabled.Visible = false;
             // 
-            // lblDropboxDisabled
+            // lblImgurDisabled
             // 
-            this.lblDropboxDisabled.AutoSize = true;
-            this.lblDropboxDisabled.Location = new System.Drawing.Point(404, 98);
-            this.lblDropboxDisabled.Name = "lblDropboxDisabled";
-            this.lblDropboxDisabled.Size = new System.Drawing.Size(60, 13);
-            this.lblDropboxDisabled.TabIndex = 0;
-            this.lblDropboxDisabled.Text = "DISABLED";
-            this.lblDropboxDisabled.Visible = false;
+            this.lblImgurDisabled.AutoSize = true;
+            this.lblImgurDisabled.Location = new System.Drawing.Point(404, 98);
+            this.lblImgurDisabled.Name = "lblImgurDisabled";
+            this.lblImgurDisabled.Size = new System.Drawing.Size(60, 13);
+            this.lblImgurDisabled.TabIndex = 0;
+            this.lblImgurDisabled.Text = "DISABLED";
+            this.lblImgurDisabled.Visible = false;
             // 
             // lblLocalDisabled
             // 
@@ -837,6 +828,16 @@
             this.tabOptions.TabIndex = 3;
             this.tabOptions.Text = "Options";
             this.tabOptions.UseVisualStyleBackColor = true;
+            // 
+            // buttUpdateOptions
+            // 
+            this.buttUpdateOptions.Location = new System.Drawing.Point(151, 261);
+            this.buttUpdateOptions.Name = "buttUpdateOptions";
+            this.buttUpdateOptions.Size = new System.Drawing.Size(249, 28);
+            this.buttUpdateOptions.TabIndex = 63;
+            this.buttUpdateOptions.Text = "ShowUpdater Options";
+            this.buttUpdateOptions.UseVisualStyleBackColor = true;
+            this.buttUpdateOptions.Click += new System.EventHandler(this.buttUpdateOptions_Click);
             // 
             // comboRefresh
             // 
@@ -1204,15 +1205,18 @@
             // 
             this.openDiag.Filter = "Wallcreeper pack|*.wcp|Unarchived pack info|*.txt";
             // 
-            // buttUpdateOptions
+            // linkImgur
             // 
-            this.buttUpdateOptions.Location = new System.Drawing.Point(151, 261);
-            this.buttUpdateOptions.Name = "buttUpdateOptions";
-            this.buttUpdateOptions.Size = new System.Drawing.Size(249, 28);
-            this.buttUpdateOptions.TabIndex = 63;
-            this.buttUpdateOptions.Text = "ShowUpdater Options";
-            this.buttUpdateOptions.UseVisualStyleBackColor = true;
-            this.buttUpdateOptions.Click += new System.EventHandler(this.buttUpdateOptions_Click);
+            this.linkImgur.AutoSize = true;
+            this.linkImgur.LinkArea = new System.Windows.Forms.LinkArea(0, 16);
+            this.linkImgur.Location = new System.Drawing.Point(86, 98);
+            this.linkImgur.Name = "linkImgur";
+            this.linkImgur.Size = new System.Drawing.Size(89, 17);
+            this.linkImgur.TabIndex = 8;
+            this.linkImgur.TabStop = true;
+            this.linkImgur.Text = "Imgur repository:";
+            this.linkImgur.UseCompatibleTextRendering = true;
+            this.linkImgur.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkImgur_LinkClicked);
             // 
             // formMain
             // 
@@ -1239,7 +1243,7 @@
             this.tabWallSources.ResumeLayout(false);
             this.tabWallSources.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackFlickr)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackDropbox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackImgur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackLocal)).EndInit();
             this.tabWinThemes.ResumeLayout(false);
             this.tabWinThemes.PerformLayout();
@@ -1328,16 +1332,15 @@
         private System.Windows.Forms.TrackBar trackLocal;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TrackBar trackFlickr;
-        private System.Windows.Forms.TrackBar trackDropbox;
+        private System.Windows.Forms.TrackBar trackImgur;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textFlickrMinH;
         private System.Windows.Forms.TextBox textFlickrMinW;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label lblFlickrDisabled;
-        private System.Windows.Forms.Label lblDropboxDisabled;
+        private System.Windows.Forms.Label lblImgurDisabled;
         private System.Windows.Forms.Label lblLocalDisabled;
         private System.Windows.Forms.Button buttWallSourcesSaveChanges;
         private System.Windows.Forms.TabPage tabAbout;
@@ -1352,6 +1355,7 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.LinkLabel linkLabel6;
         private System.Windows.Forms.Button buttUpdateOptions;
+        private System.Windows.Forms.LinkLabel linkImgur;
 
 
 
