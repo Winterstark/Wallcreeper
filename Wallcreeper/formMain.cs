@@ -2108,14 +2108,16 @@ namespace Wallcreeper
         private void buttNewTheme_Click(object sender, EventArgs e)
         {
             string themeName = "";
-            classInputBox.Show("New Theme", "Theme name?", ref themeName);
 
-            themes.Add(new Theme(themeName, "", "", "", "", false));
+            if (classInputBox.Show("New Theme", "Theme name?", ref themeName) != System.Windows.Forms.DialogResult.Cancel)
+            {
+                themes.Add(new Theme(themeName, "", "", "", "", false));
 
-            comboTheme.Items.Add(themeName);
-            comboTheme.SelectedIndex = themes.Count - 1;
+                comboTheme.Items.Add(themeName);
+                comboTheme.SelectedIndex = themes.Count - 1;
 
-            saveThemes();
+                saveThemes();
+            }
         }
 
         private void buttCloneTheme_Click(object sender, EventArgs e)
