@@ -34,6 +34,18 @@ Spring
 Night
 Any weather
 False
+Spring - Night - Clear
+C:\pix\walls\Spring - Night - Clear
+Spring
+Night
+Clear
+False
+Spring - Night - Cloudy
+C:\pix\walls\Spring - Night - Cloudy
+Spring
+Night
+Cloudy
+False
 Spring - Twilight - Clear
 C:\pix\walls\Spring - Twilight - Clear
 Spring
@@ -81,6 +93,18 @@ C:\pix\walls\Summer - Night
 Summer
 Night
 Any weather
+False
+Summer - Night - Clear
+C:\pix\walls\Summer - Night - Clear
+Summer
+Night
+Clear
+False
+Summer - Night - Cloudy
+C:\pix\walls\Summer - Night - Cloudy
+Summer
+Night
+Cloudy
 False
 Summer - Twilight - Clear
 C:\pix\walls\Summer - Twilight - Clear
@@ -130,6 +154,18 @@ Autumn
 Night
 Any weather
 False
+Autumn - Night - Clear
+C:\pix\walls\Autumn - Night - Clear
+Autumn
+Night
+Clear
+False
+Autumn - Night - Cloudy
+C:\pix\walls\Autumn - Night - Cloudy
+Autumn
+Night
+Cloudy
+False
 Autumn - Twilight - Clear
 C:\pix\walls\Autumn - Twilight - Clear
 Autumn
@@ -177,6 +213,18 @@ C:\pix\walls\Winter - Night
 Winter
 Night
 Any weather
+False
+Winter - Night - Clear
+C:\pix\walls\Winter - Night - Clear
+Winter
+Night
+Clear
+False
+Winter - Night - Cloudy
+C:\pix\walls\Winter - Night - Cloudy
+Winter
+Night
+Cloudy
 False
 Day - Snow
 C:\pix\walls\Day - Snow

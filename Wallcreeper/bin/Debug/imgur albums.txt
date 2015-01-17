@@ -1,4 +1,3 @@
-
 Spring -> PFtCh
 Spring - Day -> c5qPQ
 Spring - Day - Clear -> hGkff
@@ -7,6 +6,8 @@ Spring - Day - Rain -> YRH8a
 Spring - Twilight - Clear -> j0VHo
 Spring - Twilight - Cloudy -> LS3RU
 Spring - Night -> pvv3q
+Spring - Night - Clear -> LF60m
+Spring - Night - Cloudy -> LlaQ9
 Summer -> YnhDm
 Summer - Day -> XxQ1g
 Summer - Day - Clear -> LEuTV
@@ -15,6 +16,8 @@ Summer - Day - Rain -> OWWUA
 Summer - Twilight - Clear -> NIQ70
 Summer - Twilight - Cloudy -> 6IfbN
 Summer - Night -> N1omz
+Summer - Night - Clear -> fEB1c
+Summer - Night - Cloudy -> YnnIy
 Autumn -> rOOcD
 Autumn - Day -> S0OSq
 Autumn - Day - Clear -> V1Zvp
@@ -23,6 +26,8 @@ Autumn - Day - Rain -> 35E1F
 Autumn - Twilight - Clear -> kGe0f
 Autumn - Twilight - Cloudy -> FAHnc
 Autumn - Night -> hinyA
+Autumn - Night - Clear -> PNqbB
+Autumn - Night - Cloudy -> PHKPR
 Winter -> lUsac
 Winter - Day -> Bevbw
 Winter - Day - Clear -> sPthI
@@ -31,6 +36,8 @@ Winter - Day - Rain -> F5AjA
 Winter - Twilight - Clear -> J7rxu
 Winter - Twilight - Cloudy -> tWbwC
 Winter - Night -> yVsg5
+Winter - Night - Clear -> QwE5e
+Winter - Night - Cloudy -> dg1I1
 Day - Snow -> TdiPa
 Night - Snow -> 2y5rr
 Night - Rain -> Rxvyl
