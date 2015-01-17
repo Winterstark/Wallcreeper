@@ -56,6 +56,7 @@
             this.comboTheme = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabWallSources = new System.Windows.Forms.TabPage();
+            this.linkImgur = new System.Windows.Forms.LinkLabel();
             this.buttWallSourcesSaveChanges = new System.Windows.Forms.Button();
             this.textFlickrMinH = new System.Windows.Forms.TextBox();
             this.textFlickrMinW = new System.Windows.Forms.TextBox();
@@ -125,7 +126,7 @@
             this.picWIcon = new System.Windows.Forms.PictureBox();
             this.colorDiag = new System.Windows.Forms.ColorDialog();
             this.openDiag = new System.Windows.Forms.OpenFileDialog();
-            this.linkImgur = new System.Windows.Forms.LinkLabel();
+            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.tabs.SuspendLayout();
             this.tabWallpapers.SuspendLayout();
             this.tabWallSources.SuspendLayout();
@@ -439,6 +440,19 @@
             this.tabWallSources.TabIndex = 4;
             this.tabWallSources.Text = "Wallpaper Sources";
             this.tabWallSources.UseVisualStyleBackColor = true;
+            // 
+            // linkImgur
+            // 
+            this.linkImgur.AutoSize = true;
+            this.linkImgur.LinkArea = new System.Windows.Forms.LinkArea(0, 16);
+            this.linkImgur.Location = new System.Drawing.Point(86, 98);
+            this.linkImgur.Name = "linkImgur";
+            this.linkImgur.Size = new System.Drawing.Size(89, 17);
+            this.linkImgur.TabIndex = 8;
+            this.linkImgur.TabStop = true;
+            this.linkImgur.Text = "Imgur repository:";
+            this.linkImgur.UseCompatibleTextRendering = true;
+            this.linkImgur.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkImgur_LinkClicked);
             // 
             // buttWallSourcesSaveChanges
             // 
@@ -1036,6 +1050,7 @@
             // 
             // tabAbout
             // 
+            this.tabAbout.Controls.Add(this.linkLabel7);
             this.tabAbout.Controls.Add(this.linkLabel6);
             this.tabAbout.Controls.Add(this.linkLabel8);
             this.tabAbout.Controls.Add(this.picLogo);
@@ -1059,7 +1074,7 @@
             this.linkLabel6.AutoSize = true;
             this.linkLabel6.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel6.LinkArea = new System.Windows.Forms.LinkArea(9, 10);
-            this.linkLabel6.Location = new System.Drawing.Point(53, 231);
+            this.linkLabel6.Location = new System.Drawing.Point(53, 219);
             this.linkLabel6.Name = "linkLabel6";
             this.linkLabel6.Size = new System.Drawing.Size(153, 21);
             this.linkLabel6.TabIndex = 6;
@@ -1096,7 +1111,7 @@
             // 
             this.linkLabel5.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel5.LinkArea = new System.Windows.Forms.LinkArea(26, 7);
-            this.linkLabel5.Location = new System.Drawing.Point(-16, 294);
+            this.linkLabel5.Location = new System.Drawing.Point(-16, 303);
             this.linkLabel5.Name = "linkLabel5";
             this.linkLabel5.Size = new System.Drawing.Size(222, 23);
             this.linkLabel5.TabIndex = 8;
@@ -1110,9 +1125,9 @@
             // 
             this.linkLabel4.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel4.LinkArea = new System.Windows.Forms.LinkArea(22, 10);
-            this.linkLabel4.Location = new System.Drawing.Point(6, 179);
+            this.linkLabel4.Location = new System.Drawing.Point(-16, 179);
             this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(200, 52);
+            this.linkLabel4.Size = new System.Drawing.Size(222, 40);
             this.linkLabel4.TabIndex = 5;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "This product uses the Flickr API but is not endorsed or certified by Flickr.";
@@ -1124,7 +1139,7 @@
             // 
             this.linkLabel3.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel3.LinkArea = new System.Windows.Forms.LinkArea(37, 17);
-            this.linkLabel3.Location = new System.Drawing.Point(6, 252);
+            this.linkLabel3.Location = new System.Drawing.Point(6, 261);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(200, 42);
             this.linkLabel3.TabIndex = 7;
@@ -1205,18 +1220,20 @@
             // 
             this.openDiag.Filter = "Wallcreeper pack|*.wcp|Unarchived pack info|*.txt";
             // 
-            // linkImgur
+            // linkLabel7
             // 
-            this.linkImgur.AutoSize = true;
-            this.linkImgur.LinkArea = new System.Windows.Forms.LinkArea(0, 16);
-            this.linkImgur.Location = new System.Drawing.Point(86, 98);
-            this.linkImgur.Name = "linkImgur";
-            this.linkImgur.Size = new System.Drawing.Size(89, 17);
-            this.linkImgur.TabIndex = 8;
-            this.linkImgur.TabStop = true;
-            this.linkImgur.Text = "Imgur repository:";
-            this.linkImgur.UseCompatibleTextRendering = true;
-            this.linkImgur.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkImgur_LinkClicked);
+            this.linkLabel7.AutoSize = true;
+            this.linkLabel7.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel7.LinkArea = new System.Windows.Forms.LinkArea(9, 9);
+            this.linkLabel7.Location = new System.Drawing.Point(53, 240);
+            this.linkLabel7.Name = "linkLabel7";
+            this.linkLabel7.Size = new System.Drawing.Size(116, 21);
+            this.linkLabel7.TabIndex = 26;
+            this.linkLabel7.TabStop = true;
+            this.linkLabel7.Text = "Uses the Imgur API";
+            this.linkLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.linkLabel7.UseCompatibleTextRendering = true;
+            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
             // 
             // formMain
             // 
@@ -1356,6 +1373,7 @@
         private System.Windows.Forms.LinkLabel linkLabel6;
         private System.Windows.Forms.Button buttUpdateOptions;
         private System.Windows.Forms.LinkLabel linkImgur;
+        private System.Windows.Forms.LinkLabel linkLabel7;
 
 
 

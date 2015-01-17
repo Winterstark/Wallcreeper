@@ -1124,12 +1124,14 @@ namespace Wallcreeper
             }
             else
             {
-                if (weathRain)
+                if (weathClear)
+                    picWIcon.ImageLocation = moonPhase;
+                else if (weathRain)
                     picWIcon.ImageLocation = Application.StartupPath + "\\weather icons\\night - rain.png";
                 else if (weathSnow)
                     picWIcon.ImageLocation = Application.StartupPath + "\\weather icons\\night - snow.png";
                 else
-                    picWIcon.ImageLocation = moonPhase;
+                    picWIcon.ImageLocation = moonPhase.Replace(".png", "c.png");
             }
 
             saveWeatherStatus();
@@ -2456,12 +2458,14 @@ namespace Wallcreeper
             }
             else
             {
-                if (picWIcon.ImageLocation.Contains("rain"))
+                if (picWIcon.ImageLocation.Contains("c.png")) //moon phase (cloudy)
+                    setWeather("rain", true);
+                else if (picWIcon.ImageLocation.Contains("rain"))
                     setWeather("snow", true);
                 else if (picWIcon.ImageLocation.Contains("snow"))
                     setWeather("clear", true);
                 else //if moon phase (clear)
-                    setWeather("rain", true);
+                    setWeather("cloudy", true);
             }
         }
 
@@ -2813,6 +2817,16 @@ namespace Wallcreeper
             Process.Start("http://flickrnet.codeplex.com/");
         }
 
+        private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://api.imgur.com/");
+        }
+
+        private void linkImgur_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://winterstark.imgur.com/");
+        }
+
         private void buttUpdateOptions_Click(object sender, EventArgs e)
         {
             if (updateConfig == null || updateConfig.IsDisposed)
@@ -2822,11 +2836,6 @@ namespace Wallcreeper
                 updateConfig.DefaultUpdateURL = UPDATE_URL;
                 updateConfig.Show();
             }
-        }
-
-        private void linkImgur_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("http://winterstark.imgur.com/");
         }
     }
 }
