@@ -2051,6 +2051,7 @@ namespace Wallcreeper
             worker.RunWorkerAsync();
 
             //update check
+            lblVersion.Text = "v" + VERSION.ToString().Replace(',', '.');
             Updater.Update(VERSION, UPDATE_URL);
 
             //first run
