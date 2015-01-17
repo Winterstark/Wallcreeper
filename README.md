@@ -93,14 +93,15 @@ However, there are a couple of potential issues with using this method. The firs
 
 ### Changing weather status
 
-Because the weather service is not perfect, sometimes Wallcreeper will activate the wrong theme. To fix this issue click on the weather icon in the lower-right corner of the main window. Continue clicking until you activate the correct weather status, just be careful not to click too quickly because a double-click will reset the weather icon.
+Because the weather service is not perfect, sometimes Wallcreeper will activate the wrong theme. To fix this issue click on the weather icon in the lower-right corner of the main window. Continue clicking until you activate the correct weather status, just be careful not to click too quickly because a double-click will reset the weather icon. You can also change the weather using the tray menu.
 
 ### Tray menu
 
-![Screenshot: tray menu](http://i.imgur.com/RWUStHz.png)
+![Screenshot: tray menu](http://i.imgur.com/9kBmeiM.png)
 
 Besides double-clicking the tray icon to bring up the main window, right-clicking it also has some useful options:
 * Change wallpaper (only works when you're not using Windows Vista/7 wallpaper manager)
+* Set current weather
 * Locate current wallpaper - display the current wallpaper on the disk (only works if the current wallpaper is a local file)
 * Open wallpaper webpage (conversely, this option only works if the current wallpaper *is* from an online source)
 * Save wallpaper to local theme (also works only with online sources) - saves the wallpaper to your local directory
