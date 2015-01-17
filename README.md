@@ -10,7 +10,7 @@ This system ensures you will never get a bright and sunny wallpaper in the middl
 
 The program takes the wallpapers from pre-organized themes, which you either have to create yourself or download in the form of [wallpaper packs](http://sourceforge.net/projects/wallcreeper/files/Wallpaper%20packs/).
 
-However, in the latest version Wallcreeper enables you to use online sources such as Flickr or my own collection of already organized themes (hosted on Dropbox). **What this means is that after you download Wallcreeper (~800 Kb) you instantly gain access to 2000+ wallpapers that will always fit the moment.**
+However, in the latest version Wallcreeper enables you to use online sources such as Flickr or my own collection of already organized themes (hosted on Imgur). **What this means is that after you download Wallcreeper (~800 Kb) you instantly gain access to 2000+ wallpapers that will always fit the moment.**
 
 You can freely browse and download the online themes through [this file](https://github.com/Winterstark/Wallcreeper/blob/master/online%20themes.md).
 
@@ -53,9 +53,9 @@ The Wallcreeper release version comes bundled with a set of themes that adapts t
 
 ![Screenshot: wallpaper sources](http://i.imgur.com/ufvgAJr.png)
 
-A new feature in the latest version of Wallcreeper is that you don't need to have an existing wallpaper collection organized into themes. Instead, Wallcreeper can now download wallpapers straight from the cloud - specifically, from my collection of 2036 (and continually growing) wallpapers (in 1600x900 resolution) on Dropbox.
+A new feature in the latest version of Wallcreeper is that you don't need to have an existing wallpaper collection organized into themes. Instead, Wallcreeper can now download wallpapers straight from the cloud - specifically, from my collection of 2763 (and continually growing) wallpapers (in 1600x900 resolution) on Imgur.
 
-You can also use Flickr as another source of images, and you can specify the minimum acceptable resolution for them. You can also use all three wallpaper sources (local, Dropbox, and Flickr) at once and specify how often to use a particular source.
+You can also use Flickr as another source of images, and you can specify the minimum acceptable resolution for them. You can also use all three wallpaper sources (local, Imgur, and Flickr) at once and specify how often to use a particular source.
 
 ### Windows themes
 
@@ -69,7 +69,7 @@ Note that when a Theme is applied the Windows Personalization window pops up, so
 
 This feature enables users to share their wallpaper packs with ease. A wallpaper pack is a collection of several themes archived together with information about their active conditions.
 
-If you want to download the Dropbox-hosted collection go [here](https://sourceforge.net/projects/wallcreeper/files/Wallpaper%20packs/). The advantage of having the collection locally is that you can use Windows's built-in wallpaper manager (on Vista and newer), so whenever a wallpaper changes you will see a nice transition animation. You will also get the option to change wallpaper from the Desktop context menu.
+If you want to browse or download the Imgur-hosted collection go [here](http://winterstark.imgur.com/), or [here for the smaller and older collection organized in packs](https://sourceforge.net/projects/wallcreeper/files/Wallpaper%20packs/). The advantage of having the collection locally is that you can use Windows's built-in wallpaper manager (on Vista and newer), so whenever a wallpaper changes you will see a nice transition animation. You will also get the option to change wallpaper from the Desktop context menu.
 
 ### Options
 
@@ -108,6 +108,7 @@ Besides double-clicking the tray icon to bring up the main window, right-clickin
 Credits
 ---------
 * Uses [Flickr API](https://www.flickr.com/services/api/)
+* Uses [Imgur API](http://api.imgur.com/)
 * Flickr API accessed through the [Flickr.Net](http://flickrnet.codeplex.com/) library
 * Wallcreeper icon original image from [Wikimedia Commons](http://commons.wikimedia.org/wiki/File:Tichodroma_muraria02_cropped.jpg)
 * Weather and moon phases icons by [VClouds](http://vclouds.deviantart.com/art/VClouds-Weather-2-179058977)
