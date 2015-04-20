@@ -980,15 +980,36 @@ namespace Wallcreeper
 
         string currSeason()
         {
-            if (DateTime.Now.Month == 3 && DateTime.Now.Day >= 21 || DateTime.Now.Month == 4 || DateTime.Now.Month == 5 || DateTime.Now.Month == 6 && DateTime.Now.Day < 21)
-                return "Spring";
-            else if (DateTime.Now.Month == 6 && DateTime.Now.Day >= 21 || DateTime.Now.Month == 7 || DateTime.Now.Month == 8 || DateTime.Now.Month == 9 && DateTime.Now.Day < 23)
-                return "Summer";
-            else if (DateTime.Now.Month == 9 && DateTime.Now.Day >= 23 || DateTime.Now.Month == 10 || DateTime.Now.Month == 11 || DateTime.Now.Month == 12 && DateTime.Now.Day < 21)
-                return "Autumn";
-            //else if (DateTime.Now.Month == 12 && DateTime.Now.Day >= 21 || DateTime.Now.Month == 1 || DateTime.Now.Month == 2 || DateTime.Now.Month == 3 && DateTime.Now.Day < 21)
+            if (currLat < 0)
+            {
+                if (DateTime.Now.Month == 3 && DateTime.Now.Day >= 21 || DateTime.Now.Month == 4 ||
+                    DateTime.Now.Month == 5 || DateTime.Now.Month == 6 && DateTime.Now.Day < 21)
+                    return "Autumn";
+                else if (DateTime.Now.Month == 6 && DateTime.Now.Day >= 21 || DateTime.Now.Month == 7 ||
+                         DateTime.Now.Month == 8 || DateTime.Now.Month == 9 && DateTime.Now.Day < 23)
+                    return "Winter";
+                else if (DateTime.Now.Month == 9 && DateTime.Now.Day >= 23 || DateTime.Now.Month == 10 ||
+                         DateTime.Now.Month == 11 || DateTime.Now.Month == 12 && DateTime.Now.Day < 21)
+                    return "Spring";
+                //else if (DateTime.Now.Month == 12 && DateTime.Now.Day >= 21 || DateTime.Now.Month == 1 || DateTime.Now.Month == 2 || DateTime.Now.Month == 3 && DateTime.Now.Day < 21)
+                else
+                    return "Summer";
+            }
             else
-                return "Winter";
+            {
+                if (DateTime.Now.Month == 3 && DateTime.Now.Day >= 21 || DateTime.Now.Month == 4 ||
+                    DateTime.Now.Month == 5 || DateTime.Now.Month == 6 && DateTime.Now.Day < 21)
+                    return "Spring";
+                else if (DateTime.Now.Month == 6 && DateTime.Now.Day >= 21 || DateTime.Now.Month == 7 ||
+                         DateTime.Now.Month == 8 || DateTime.Now.Month == 9 && DateTime.Now.Day < 23)
+                    return "Summer";
+                else if (DateTime.Now.Month == 9 && DateTime.Now.Day >= 23 || DateTime.Now.Month == 10 ||
+                         DateTime.Now.Month == 11 || DateTime.Now.Month == 12 && DateTime.Now.Day < 21)
+                    return "Autumn";
+                //else if (DateTime.Now.Month == 12 && DateTime.Now.Day >= 21 || DateTime.Now.Month == 1 || DateTime.Now.Month == 2 || DateTime.Now.Month == 3 && DateTime.Now.Day < 21)
+                else
+                    return "Winter";
+            }
         }
 
         string dlPage(string URL)
