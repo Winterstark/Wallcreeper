@@ -1059,8 +1059,8 @@ namespace Wallcreeper
                 weather = "rain";
             else if (descSnow.Contains(weather))
                 weather = "snow";
-            else
-                MessageBox.Show("Unrecognized weather condition: [" + weather + "]");
+            //else
+            //    MessageBox.Show("Unrecognized weather condition: [" + weather + "]");
 
             setWeather(weather, false);
         }
