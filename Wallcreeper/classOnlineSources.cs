@@ -55,8 +55,6 @@ namespace Wallcreeper
                 }
 
                 //remove banned wallpapers from the list
-                bannedWalls.Add(Images[0]);
-
                 foreach (string banned in bannedWalls)
                     if (Images.Contains(banned))
                         Images.Remove(banned);
