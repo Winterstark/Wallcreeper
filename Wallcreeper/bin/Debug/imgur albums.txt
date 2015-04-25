@@ -48,3 +48,5 @@ Holidays - Halloween -> 4IwKa
 Holidays - Winter -> j9ZhG
 Holidays - Winter - Christmas -> cMcDc
 Holidays - Winter - New Year -> RmL9v
+Twilight - Rain -> ESWFq
+Twilight - Snow -> 6L6Xg

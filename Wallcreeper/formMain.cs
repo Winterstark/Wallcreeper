@@ -1484,20 +1484,18 @@ namespace Wallcreeper
                 }
 
                 themes.Add(new Theme(name, file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine(), bool.Parse(file.ReadLine())));
-
-                //check if using subdirectory
-                foreach (Theme theme in themes)
-                {
-                    string subdir = Application.StartupPath + "\\wall_themes\\" + theme.wallDir;
-
-                    if (Directory.Exists(subdir))
-                        theme.wallDir = subdir;
-                }
-
                 comboTheme.Items.Add(themes[themes.Count - 1].name);
             }
 
             file.Close();
+
+            //check if using subdirectory
+            foreach (Theme theme in themes)
+            {
+                string subdir = Application.StartupPath + "\\wall_themes\\" + theme.wallDir;
+                if (Directory.Exists(subdir))
+                    theme.wallDir = subdir;
+            }
         }
 
         void loadOptions()

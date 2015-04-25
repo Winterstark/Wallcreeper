@@ -232,6 +232,18 @@ Any date
 Day
 Snow
 True
+Twilight - Rain
+C:\pix\walls\Twilight - Rain
+Any date
+Twilight
+Rain
+True
+Twilight - Snow
+C:\pix\walls\Twilight - Snow
+Any date
+Twilight
+Snow
+True
 Night - Snow
 C:\pix\walls\Night - Snow
 Any date
