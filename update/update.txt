@@ -1,1 +1,8 @@
-no update
+[UPDATE]
+[VERSION]1.11[/VERSION]
+[FILE]https://raw.githubusercontent.com/Winterstark/Wallcreeper/master/update/update files/Wallcreeper.exe->root\Wallcreeper.exe[/FILE]
+[FILE]https://raw.githubusercontent.com/Winterstark/Wallcreeper/master/update/update files/imgur albums.txt->root\imgur albums.txt[/FILE]
+[CHANGELOG]* added two new themes: Twilight - Rain & Twilight - Snow
+* fixed issue where Southern Hemisphere had the same seasons as the Northern Hemisphere
+* various other fixes[/CHANGELOG]
+[/UPDATE]
