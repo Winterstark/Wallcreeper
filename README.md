@@ -12,7 +12,7 @@ The program takes the wallpapers from pre-organized themes, which you either hav
 
 However, in the latest version Wallcreeper enables you to use online sources such as Flickr or my own collection of already organized themes (hosted on Imgur). **What this means is that after you download Wallcreeper (~1 Mb) you instantly gain access to 2000+ wallpapers that will always fit the moment.**
 
-You can freely browse and download the online themes through [this file](https://github.com/Winterstark/Wallcreeper/blob/master/online%20themes.md).
+You can check out the Imgur wallpaper collection [HERE](http://winterstark.imgur.com/), which currently consists of 2998 wallpapers.
 
 
 Installation
