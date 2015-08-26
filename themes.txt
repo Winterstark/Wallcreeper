@@ -1,0 +1,222 @@
+Spring
+Spring
+Spring
+Any time
+Any weather
+False
+Spring - Day
+Spring - Day
+Spring
+Day
+Any weather
+False
+Spring - Day - Clear
+Spring - Day - Clear
+Spring
+Day
+Clear
+False
+Spring - Day - Cloudy
+Spring - Day - Cloudy
+Spring
+Day
+Cloudy
+False
+Spring - Day - Rain
+Spring - Day - Rain
+Spring
+Day
+Rain
+True
+Spring - Night
+Spring - Night
+Spring
+Night
+Any weather
+False
+Spring - Twilight - Clear
+Spring - Twilight - Clear
+Spring
+Twilight
+Clear
+False
+Spring - Twilight - Cloudy
+Spring - Twilight - Cloudy
+Spring
+Twilight
+Cloudy
+False
+Summer
+Summer
+Summer
+Any time
+Any weather
+False
+Summer - Day
+Summer - Day
+Summer
+Day
+Any weather
+False
+Summer - Day - Clear
+Summer - Day - Clear
+Summer
+Day
+Clear
+False
+Summer - Day - Cloudy
+Summer - Day - Cloudy
+Summer
+Day
+Cloudy
+False
+Summer - Day - Rain
+Summer - Day - Rain
+Summer
+Day
+Rain
+True
+Summer - Night
+Summer - Night
+Summer
+Night
+Any weather
+False
+Summer - Twilight - Clear
+Summer - Twilight - Clear
+Summer
+Twilight
+Clear
+False
+Summer - Twilight - Cloudy
+Summer - Twilight - Cloudy
+Summer
+Twilight
+Cloudy
+False
+Autumn
+Autumn
+Autumn
+Any time
+Any weather
+False
+Autumn - Day
+Autumn - Day
+Autumn
+Day
+Any weather
+False
+Autumn - Day - Clear
+Autumn - Day - Clear
+Autumn
+Day
+Clear
+False
+Autumn - Day - Cloudy
+Autumn - Day - Cloudy
+Autumn
+Day
+Cloudy
+False
+Autumn - Day - Rain
+Autumn - Day - Rain
+Autumn
+Day
+Rain
+True
+Autumn - Night
+Autumn - Night
+Autumn
+Night
+Any weather
+False
+Autumn - Twilight - Clear
+Autumn - Twilight - Clear
+Autumn
+Twilight
+Clear
+False
+Autumn - Twilight - Cloudy
+Autumn - Twilight - Cloudy
+Autumn
+Twilight
+Cloudy
+False
+Winter
+Winter
+Winter
+Any time
+Any weather
+False
+Winter - Day
+Winter - Day
+Winter
+Day
+Any weather
+False
+Winter - Day - Clear
+Winter - Day - Clear
+Winter
+Day
+Clear
+False
+Winter - Day - Cloudy
+Winter - Day - Cloudy
+Winter
+Day
+Cloudy
+False
+Winter - Day - Rain
+Winter - Day - Rain
+Winter
+Day
+Rain
+True
+Winter - Night
+Winter - Night
+Winter
+Night
+Any weather
+False
+Winter - Twilight - Clear
+Winter - Twilight - Clear
+Winter
+Twilight
+Clear
+False
+Winter - Twilight - Cloudy
+Winter - Twilight - Cloudy
+Winter
+Twilight
+Cloudy
+False
+Day - Snow
+Day - Snow
+Any date
+Day
+Snow
+True
+Twilight - Rain
+Twilight - Rain
+Any date
+Twilight
+Rain
+True
+Twilight - Snow
+Twilight - Snow
+Any date
+Twilight
+Snow
+True
+Night - Snow
+Night - Snow
+Any date
+Night
+Snow
+True
+Night - Rain
+Night - Rain
+Any date
+Night
+Rain
+True
