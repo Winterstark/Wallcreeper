@@ -18,7 +18,7 @@ namespace Wallcreeper
 {
     public partial class formMain : Form
     {
-        const double VERSION = 1.11;
+        const double VERSION = 1.12;
         const string UPDATE_URL = "https://raw.githubusercontent.com/Winterstark/Wallcreeper/master/update/update.txt";
         
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
