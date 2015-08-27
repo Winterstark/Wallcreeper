@@ -1299,7 +1299,7 @@ namespace Wallcreeper
                     string thDate = date;
                     int margBefore = 0, margAfter = 0;
 
-                    foreach (string ev in new string[] { "Full moon", "Halloween", "Easter" })
+                    foreach (string ev in new string[] { "Full moon", "Halloween", "Easter", "Christmas", "New Year" })
                         if (thDate.Contains(ev) && thDate != ev)
                         {
                             string[] margins = thDate.Replace(ev, "").Replace("--", "-").Split('-');
@@ -1315,6 +1315,18 @@ namespace Wallcreeper
                     {
                         case "Halloween":
                             if (!isDateWithinMargins(new DateTime(DateTime.Now.Year, 10, 31), margBefore, margAfter))
+                                return false;
+                            break;
+                        case "Winter Holidays":
+                            if (!(DateTime.Now.Month == 12 && DateTime.Now.Day >= 6 || DateTime.Now.Month == 1 && DateTime.Now.Day <= 6))
+                                return false;
+                            break;
+                        case "Christmas":
+                            if (!isDateWithinMargins(new DateTime(DateTime.Now.Year, 12, 25), margBefore, margAfter))
+                                return false;
+                            break;
+                        case "New Year":
+                            if (!isDateWithinMargins(new DateTime(DateTime.Now.Year, 1, 1), margBefore, margAfter))
                                 return false;
                             break;
                         case "Easter":

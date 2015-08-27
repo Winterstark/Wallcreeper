@@ -276,19 +276,19 @@ Any weather
 False
 Holidays - Winter
 C:\pix\walls\Holidays - Winter
-6.12.-31.12., 1.1.-6.1.
+Winter Holidays
 Any time
 Any weather
 False
 Holidays - Winter - Christmas
 C:\pix\walls\Holidays - Winter - Christmas
-24.12. - 26.12.
+1-Christmas-1
 Any time
 Any weather
 False
 Holidays - Winter - New Year
 C:\pix\walls\Holidays - Winter - New Year
-31.12., 1.1.
+1-New Year-1
 Any time
 Any weather
 True
@@ -302,101 +302,5 @@ Full Moon
 C:\pix\walls\Full Moon
 Full moon
 Night
-Any weather
-False
-Coffee Break
-C:\pix\walls\Coffee Break
-Any date
-12:30-13:30
-Any weather
-True
-Sexy - Spring - Day
-C:\pix\walls_sexy\Sexy - Spring - Day
-Spring
-17:00-sunset
-Any weather
-False
-Sexy - Spring - Evening
-C:\pix\walls_sexy\Sexy - Spring - Evening
-Spring
-sunset-22:00
-Any weather
-False
-Sexy - Spring - Night
-C:\pix\walls_sexy\Sexy - Spring - Night
-Spring
-22:00-next_sunrise
-Any weather
-False
-Sexy - Summer - Day
-C:\pix\walls_sexy\Sexy - Summer - Day
-Summer
-15:00-sunset
-Clear
-False
-Sexy - Summer - Evening
-C:\pix\walls_sexy\Sexy - Summer - Evening
-Summer
-sunset-22:00
-Any weather
-False
-Sexy - Summer - Night
-C:\pix\walls_sexy\Sexy - Summer - Night
-Summer
-22:00-next_sunrise
-Any weather
-False
-Sexy - Autumn - Day
-C:\pix\walls_sexy\Sexy - Autumn - Day
-Autumn
-14:00-sunset
-Any weather
-False
-Sexy - Autumn - Evening
-C:\pix\walls_sexy\Sexy - Autumn - Evening
-Autumn
-sunset-22:00
-Any weather
-False
-Sexy - Autumn - Night
-C:\pix\walls_sexy\Sexy - Autumn - Night
-Autumn
-22:00-sunrise
-Any weather
-False
-Sexy - Winter - Day
-C:\pix\walls_sexy\Sexy - Winter - Day
-Winter
-15:00-sunset
-Any weather
-False
-Sexy - Winter - Early Evening
-C:\pix\walls_sexy\Sexy - Winter - Early Evening
-Winter
-sunset-19:00
-Any weather
-False
-Sexy - Winter - Evening
-C:\pix\walls_sexy\Sexy - Winter - Evening
-Winter
-19:00-22:00
-Any weather
-False
-Sexy - Winter - Night
-C:\pix\walls_sexy\Sexy - Winter - Night
-Winter
-22:00-next_sunrise
-Any weather
-False
-Sexy - Holidays - Winter
-C:\pix\walls_sexy\Sexy - Holidays - Winter
-Winter holidays
-Any time
-Any weather
-False
-Sexy - Holidays - Halloween
-C:\pix\walls_sexy\Sexy - Holidays - Halloween
-Halloween
-Any time
 Any weather
 False

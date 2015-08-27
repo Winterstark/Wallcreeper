@@ -112,6 +112,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tabAbout = new System.Windows.Forms.TabPage();
+            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabel8 = new System.Windows.Forms.LinkLabel();
             this.picLogo = new System.Windows.Forms.PictureBox();
@@ -126,7 +127,6 @@
             this.picWIcon = new System.Windows.Forms.PictureBox();
             this.colorDiag = new System.Windows.Forms.ColorDialog();
             this.openDiag = new System.Windows.Forms.OpenFileDialog();
-            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.tabs.SuspendLayout();
             this.tabWallpapers.SuspendLayout();
             this.tabWallSources.SuspendLayout();
@@ -345,6 +345,9 @@
             "Autumn",
             "Winter",
             "Halloween",
+            "Winter Holidays",
+            "Christmas",
+            "New Year",
             "Easter",
             "Full moon"});
             this.comboDate.Location = new System.Drawing.Point(59, 111);
@@ -639,6 +642,9 @@
             "Autumn",
             "Winter",
             "Halloween",
+            "Winter Holidays",
+            "Christmas",
+            "New Year",
             "Easter",
             "Full moon",
             "Never"});
@@ -1069,6 +1075,21 @@
             this.tabAbout.Text = "About";
             this.tabAbout.UseVisualStyleBackColor = true;
             // 
+            // linkLabel7
+            // 
+            this.linkLabel7.AutoSize = true;
+            this.linkLabel7.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel7.LinkArea = new System.Windows.Forms.LinkArea(9, 9);
+            this.linkLabel7.Location = new System.Drawing.Point(53, 240);
+            this.linkLabel7.Name = "linkLabel7";
+            this.linkLabel7.Size = new System.Drawing.Size(116, 21);
+            this.linkLabel7.TabIndex = 26;
+            this.linkLabel7.TabStop = true;
+            this.linkLabel7.Text = "Uses the Imgur API";
+            this.linkLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.linkLabel7.UseCompatibleTextRendering = true;
+            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
+            // 
             // linkLabel6
             // 
             this.linkLabel6.AutoSize = true;
@@ -1219,21 +1240,6 @@
             // openDiag
             // 
             this.openDiag.Filter = "Wallcreeper pack|*.wcp|Unarchived pack info|*.txt";
-            // 
-            // linkLabel7
-            // 
-            this.linkLabel7.AutoSize = true;
-            this.linkLabel7.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel7.LinkArea = new System.Windows.Forms.LinkArea(9, 9);
-            this.linkLabel7.Location = new System.Drawing.Point(53, 240);
-            this.linkLabel7.Name = "linkLabel7";
-            this.linkLabel7.Size = new System.Drawing.Size(116, 21);
-            this.linkLabel7.TabIndex = 26;
-            this.linkLabel7.TabStop = true;
-            this.linkLabel7.Text = "Uses the Imgur API";
-            this.linkLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.linkLabel7.UseCompatibleTextRendering = true;
-            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
             // 
             // formMain
             // 
