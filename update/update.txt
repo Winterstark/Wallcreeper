@@ -1,4 +1,10 @@
 [UPDATE]
+[VERSION]1.12[/VERSION]
+[FILE]https://raw.githubusercontent.com/Winterstark/Wallcreeper/master/update/update files/Wallcreeper.exe->root\Wallcreeper.exe[/FILE]
+[CHANGELOG]* Fixed crashing issue with some default wallpaper themes (whose dates were specified in a DateTime format from a different Culture than the user's system)[/CHANGELOG]
+[/UPDATE]
+
+[UPDATE]
 [VERSION]1.11[/VERSION]
 [FILE]https://raw.githubusercontent.com/Winterstark/Wallcreeper/master/update/update files/Wallcreeper.exe->root\Wallcreeper.exe[/FILE]
 [FILE]https://raw.githubusercontent.com/Winterstark/Wallcreeper/master/update/update files/imgur albums.txt->root\imgur albums.txt[/FILE]
