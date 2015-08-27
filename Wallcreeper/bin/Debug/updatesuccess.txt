@@ -1,0 +1,4 @@
+Version 1.12 installed
+
+v1.12 changelog::
+* Fixed crashing issue with some default wallpaper themes (whose dates were specified in a DateTime format from a different Culture than the user's system)
