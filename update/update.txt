@@ -1,7 +1,9 @@
 [UPDATE]
 [VERSION]1.12[/VERSION]
 [FILE]https://raw.githubusercontent.com/Winterstark/Wallcreeper/master/update/update files/Wallcreeper.exe->root\Wallcreeper.exe[/FILE]
-[CHANGELOG]* Fixed crashing issue with some default wallpaper themes (whose dates were specified in a DateTime format from a different Culture than the user's system)[/CHANGELOG]
+[FILE]https://raw.githubusercontent.com/Winterstark/Wallcreeper/master/update/update files/GenericForms.dll->root\GenericForms.dll[/FILE]
+[CHANGELOG]* Fixed crashing issue with some default wallpaper themes (whose dates were specified in a DateTime format from a different Culture than the user's system)
+* Fixed updating issue[/CHANGELOG]
 [/UPDATE]
 
 [UPDATE]
